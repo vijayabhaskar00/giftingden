@@ -1,5 +1,6 @@
 import { LinkButton } from "@/components/ui/Button";
 import GiftArt from "@/components/art/GiftArt";
+import { photoUrl } from "@/lib/photos";
 import Reveal from "@/components/ui/Reveal";
 import { aboutValues } from "@/lib/data/content";
 
@@ -9,10 +10,10 @@ export default function BrandStory() {
       <div className="container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
         <Reveal className="relative lg:col-span-5">
           <div className="relative aspect-[4/5] overflow-hidden rounded-md">
-            <GiftArt art={{ tone: "champagne", box: "ivory", items: ["card", "candle", "flowers"] }} variant="wrapped" alt="A Giftingden box tied with a ribbon and a handwritten tag" />
+            <GiftArt art={{ tone: "champagne", box: "ivory", items: ["card", "candle", "flowers"], photo: photoUrl("ribbon") }} variant="wrapped" alt="Hands tying a gold satin ribbon on an ivory Giftingden gift box" />
           </div>
           <div className="absolute -bottom-6 right-4 hidden w-40 overflow-hidden rounded-md border-[6px] border-background shadow-xl sm:block md:-right-6 lg:-right-10">
-            <div className="relative aspect-square"><GiftArt art={{ tone: "rose", items: ["card", "flowers"] }} variant="detail" alt="A handwritten card beside dried flowers" /></div>
+            <div className="relative aspect-square"><GiftArt art={{ tone: "rose", items: ["card", "flowers"], photo: photoUrl("bridesmaid-close") }} variant="detail" alt="Rose balm, silk scrunchie and a mirror beside pale pink flowers" /></div>
           </div>
         </Reveal>
         <Reveal delay={120} className="lg:col-span-7">

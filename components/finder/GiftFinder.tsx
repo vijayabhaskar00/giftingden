@@ -2,16 +2,17 @@
 
 import { useRef, useState, useTransition } from "react";
 import { ArrowLeft, Check, RotateCcw } from "lucide-react";
-import { recommendGifts } from "@/app/actions/gift-finder";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
-import { finderQuestions } from "@/lib/gift-finder";
+import { getAllProducts } from "@/lib/catalogue";
+import { finderQuestions, ruleBasedRecommender, type Recommender } from "@/lib/gift-finder";
 import { trackEvent } from "@/lib/analytics";
 import { createGiftFinderWhatsAppMessage } from "@/lib/whatsapp";
 import type { FinderAnswers, Recommendation } from "@/lib/types";
 import GiftFinderQuestion from "./GiftFinderQuestion";
 import GiftRecommendation from "./GiftRecommendation";
 
-export default function GiftFinder({ headingId = "finder-title" }: { headingId?: string }) {
+/** `recommender` is pluggable: pass an async (e.g. AI-backed) implementation to replace the rule-based default. */
+export default function GiftFinder({ headingId = "finder-title", recommender = ruleBasedRecommender }: { headingId?: string; recommender?: Recommender }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<FinderAnswers>({});
   const [results, setResults] = useState<Recommendation[] | null>(null);
@@ -27,7 +28,7 @@ export default function GiftFinder({ headingId = "finder-title" }: { headingId?:
     setError(false);
     startTransition(async () => {
       try {
-        const recs = await recommendGifts(final);
+        const recs = await recommender(final, getAllProducts());
         setResults(recs);
         trackEvent("gift_finder_complete", { ...final, results: recs.length });
         panel.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });

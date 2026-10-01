@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import GiftArt from "@/components/art/GiftArt";
 import CustomGiftForm from "@/components/forms/CustomGiftForm";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import { photoUrl } from "@/lib/photos";
 import Reveal from "@/components/ui/Reveal";
 import { customSteps } from "@/lib/data/content";
 import { buildMetadata } from "@/lib/seo";
@@ -23,7 +24,7 @@ export default function CustomGiftsPage() {
             <h1 className="t-h1">Make It Uniquely Theirs.</h1>
             <p className="t-lead mt-6 max-w-xl">Create a customised gift box around the person you&apos;re gifting. Choose the occasion, the budget, the products and the packaging, then add a note in your own words.</p>
           </div>
-          <div className="lg:col-span-5"><div className="relative mx-auto aspect-[5/4] max-w-lg overflow-hidden rounded-md lg:aspect-[4/5]"><GiftArt art={{ tone: "champagne", box: "ivory", items: ["card", "chocolates", "candle", "flowers"] }} variant="flatlay" alt="A custom hamper laid out with a personalised card" /></div></div>
+          <div className="lg:col-span-5"><div className="relative mx-auto aspect-[5/4] max-w-lg overflow-hidden rounded-md lg:aspect-[4/5]"><GiftArt art={{ tone: "champagne", box: "ivory", items: ["card", "chocolates", "candle", "flowers"], photo: photoUrl("custom") }} variant="flatlay" alt="A custom hamper laid out with a personalised card" /></div></div>
         </div>
       </section>
 

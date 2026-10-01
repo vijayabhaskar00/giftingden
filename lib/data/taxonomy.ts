@@ -1,3 +1,4 @@
+import { photoUrl, type PhotoKey } from "../photos";
 import type {
   ArtSpec, CategorySlug, OccasionSlug, PersonalitySlug, PriceBandSlug, RecipientSlug, StyleSlug, Taxon,
 } from "../types";
@@ -71,32 +72,34 @@ export const personalities: Taxon[] = [
   { slug: "sentimental", name: "Sentimental", description: "" },
 ];
 
+const ph = (art: ArtSpec, key: PhotoKey): ArtSpec => ({ ...art, photo: photoUrl(key) });
+
 /** Visual art for taxonomy cards (swap with photography via `src`). */
 export const occasionArt: Record<OccasionSlug, ArtSpec> = {
-  birthday: { tone: "blush", items: ["chocolates", "candle", "card"] },
-  anniversary: { tone: "rose", box: "ivory", items: ["flowers", "candle", "card"] },
-  wedding: { tone: "champagne", box: "ivory", items: ["flowers", "bottle", "card"] },
-  congratulations: { tone: "sage", items: ["bottle", "chocolates", "card"] },
-  valentines: { tone: "rose", box: "cocoa", items: ["flowers", "chocolates", "candle"] },
-  festive: { tone: "cocoa", box: "champagne", items: ["tin", "jar", "candle"] },
-  corporate: { tone: "charcoal", items: ["notebook", "mug", "tin"] },
-  "thank-you": { tone: "ivory", items: ["flowers", "tin", "card"] },
-  "new-beginnings": { tone: "sage", box: "ivory", items: ["candle", "jar", "card"] },
-  "just-because": { tone: "champagne", items: ["soap", "flowers", "chocolates"] },
+  birthday: ph({ tone: "blush", items: ["chocolates", "candle", "card"] }, "birthday"),
+  anniversary: ph({ tone: "rose", box: "ivory", items: ["flowers", "candle", "card"] }, "couple"),
+  wedding: ph({ tone: "champagne", box: "ivory", items: ["flowers", "bottle", "card"] }, "wedding"),
+  congratulations: ph({ tone: "sage", items: ["bottle", "chocolates", "card"] }, "gourmet"),
+  valentines: ph({ tone: "rose", box: "cocoa", items: ["flowers", "chocolates", "candle"] }, "couple-close"),
+  festive: ph({ tone: "cocoa", box: "champagne", items: ["tin", "jar", "candle"] }, "festive"),
+  corporate: ph({ tone: "charcoal", items: ["notebook", "mug", "tin"] }, "corporate"),
+  "thank-you": ph({ tone: "ivory", items: ["flowers", "tin", "card"] }, "thanks"),
+  "new-beginnings": ph({ tone: "sage", box: "ivory", items: ["candle", "jar", "card"] }, "employee-close"),
+  "just-because": ph({ tone: "champagne", items: ["soap", "flowers", "chocolates"] }, "custom"),
 };
 
 export const categoryArt: Record<CategorySlug, ArtSpec> = {
-  "birthday-boxes": { tone: "blush", items: ["chocolates", "candle", "card"] },
-  "self-care-boxes": { tone: "sage", items: ["soap", "candle", "tin"] },
-  "couple-hampers": { tone: "rose", items: ["bottle", "chocolates", "flowers"] },
-  "corporate-hampers": { tone: "charcoal", items: ["notebook", "mug", "tin"] },
-  "luxury-hampers": { tone: "cocoa", box: "charcoal", items: ["bottle", "tin", "candle"] },
-  "festive-hampers": { tone: "champagne", box: "cocoa", items: ["tin", "jar", "candle"] },
-  "bridesmaid-gifts": { tone: "blush", box: "ivory", items: ["flowers", "soap", "card"] },
-  "wedding-hampers": { tone: "ivory", box: "champagne", items: ["flowers", "bottle", "tin"] },
-  "new-employee-kits": { tone: "charcoal", box: "sage", items: ["notebook", "mug", "card"] },
-  "thank-you-boxes": { tone: "ivory", items: ["flowers", "jar", "card"] },
-  "custom-hampers": { tone: "champagne", box: "ivory", items: ["card", "chocolates", "candle"] },
+  "birthday-boxes": ph({ tone: "blush", items: ["chocolates", "candle", "card"] }, "birthday"),
+  "self-care-boxes": ph({ tone: "sage", items: ["soap", "candle", "tin"] }, "selfcare"),
+  "couple-hampers": ph({ tone: "rose", items: ["bottle", "chocolates", "flowers"] }, "couple"),
+  "corporate-hampers": ph({ tone: "charcoal", items: ["notebook", "mug", "tin"] }, "corporate"),
+  "luxury-hampers": ph({ tone: "cocoa", box: "charcoal", items: ["bottle", "tin", "candle"] }, "luxury"),
+  "festive-hampers": ph({ tone: "champagne", box: "cocoa", items: ["tin", "jar", "candle"] }, "festive"),
+  "bridesmaid-gifts": ph({ tone: "blush", box: "ivory", items: ["flowers", "soap", "card"] }, "bridesmaid"),
+  "wedding-hampers": ph({ tone: "ivory", box: "champagne", items: ["flowers", "bottle", "tin"] }, "wedding"),
+  "new-employee-kits": ph({ tone: "charcoal", box: "sage", items: ["notebook", "mug", "card"] }, "employee"),
+  "thank-you-boxes": ph({ tone: "ivory", items: ["flowers", "jar", "card"] }, "thanks"),
+  "custom-hampers": ph({ tone: "champagne", box: "ivory", items: ["card", "chocolates", "candle"] }, "custom"),
 };
 
 /** Homepage "Shop by occasion" tiles. Each links to a collection. */
@@ -107,8 +110,8 @@ export const homeOccasionTiles: OccasionTile[] = [
   { name: "Wedding", description: "For the couple and the people beside them.", href: "/occasions/wedding", art: occasionArt.wedding },
   { name: "Corporate", description: "Gifting that reflects well on your brand.", href: "/corporate-gifting", art: occasionArt.corporate },
   { name: "Festive", description: "Warmth and sparkle for every festival.", href: "/occasions/festive", art: occasionArt.festive },
-  { name: "For Her", description: "Gifts she'll actually use and love.", href: "/gifts?recipient=her", art: { tone: "rose", items: ["flowers", "soap", "candle"] } },
-  { name: "For Him", description: "Thoughtful, never generic.", href: "/gifts?recipient=him", art: { tone: "cocoa", box: "charcoal", items: ["bottle", "notebook", "mug"] } },
+  { name: "For Her", description: "Gifts she'll actually use and love.", href: "/gifts?recipient=her", art: ph({ tone: "rose", items: ["flowers", "soap", "candle"] }, "selfcare") },
+  { name: "For Him", description: "Thoughtful, never generic.", href: "/gifts?recipient=him", art: ph({ tone: "cocoa", box: "charcoal", items: ["bottle", "notebook", "mug"] }, "luxury") },
   { name: "Thank You", description: "Because 'thanks' deserves more.", href: "/occasions/thank-you", art: occasionArt["thank-you"] },
   { name: "Congratulations", description: "For wins worth celebrating.", href: "/occasions/congratulations", art: occasionArt.congratulations },
   { name: "Just Because", description: "No reason needed. That's the point.", href: "/occasions/just-because", art: occasionArt["just-because"] },

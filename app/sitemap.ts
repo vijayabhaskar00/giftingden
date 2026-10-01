@@ -3,6 +3,8 @@ import { getAllProducts } from "@/lib/catalogue";
 import { occasions } from "@/lib/data/taxonomy";
 import { absoluteUrl } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = ["/", "/gifts", "/gift-packages", "/occasions", "/corporate-gifting", "/custom-gifts", "/gift-finder", "/about", "/contact", "/faq", "/privacy", "/terms"];
   return [

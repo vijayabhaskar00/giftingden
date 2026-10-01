@@ -1,5 +1,6 @@
 import { slugify } from "../format";
-import type { ArtSpec, ImageVariant, Product, ProductImage } from "../types";
+import { photoUrl, type PhotoKey } from "../photos";
+import type { ArtSpec, CategorySlug, Product, ProductImage } from "../types";
 
 /**
  * Product catalogue. This file is the single source of truth today; swap
@@ -10,16 +11,27 @@ import type { ArtSpec, ImageVariant, Product, ProductImage } from "../types";
 const DEFAULT_DELIVERY =
   "Delivered across India, usually within 3–5 working days. Express and same-day options available in select cities. Tell us your date on WhatsApp and we'll confirm.";
 
-const VARIANTS: ImageVariant[] = ["box", "flatlay", "detail", "wrapped"];
-const VARIANT_ALT: Record<ImageVariant, (n: string) => string> = {
-  box: (n) => `${n} gift box, styled and ribboned`,
-  flatlay: (n) => `Flat lay of everything inside ${n}`,
-  detail: (n) => `Close-up of a keepsake from ${n}`,
-  wrapped: (n) => `${n} in signature Giftingden packaging`,
+/** Primary + secondary photograph per category. Give a product its own `photos` to override. */
+export const CATEGORY_PHOTOS: Record<CategorySlug, [PhotoKey, PhotoKey]> = {
+  "birthday-boxes": ["birthday", "birthday-flat"],
+  "self-care-boxes": ["selfcare", "selfcare-close"],
+  "couple-hampers": ["couple", "couple-close"],
+  "corporate-hampers": ["corporate", "corporate-flat"],
+  "luxury-hampers": ["luxury", "gourmet"],
+  "festive-hampers": ["festive", "festive-close"],
+  "bridesmaid-gifts": ["bridesmaid", "bridesmaid-close"],
+  "wedding-hampers": ["wedding", "wedding-close"],
+  "new-employee-kits": ["employee", "employee-close"],
+  "thank-you-boxes": ["thanks", "thanks-close"],
+  "custom-hampers": ["custom", "ribbon"],
 };
 
-function shots(name: string, art: ArtSpec): ProductImage[] {
-  return VARIANTS.map((variant) => ({ variant, art, alt: VARIANT_ALT[variant](name) }));
+function photoShots(name: string, category: CategorySlug, art: ArtSpec, override?: [PhotoKey, PhotoKey]): ProductImage[] {
+  const [a, b] = override ?? CATEGORY_PHOTOS[category];
+  return [
+    { variant: "box", art, src: photoUrl(a), alt: `${name} gift box, styled and ready to gift` },
+    { variant: "detail", art, src: photoUrl(b), alt: `Close-up details of ${name}` },
+  ];
 }
 
 type Seed = Omit<
@@ -32,8 +44,8 @@ type Seed = Omit<
     created: string;
   };
 
-function make({ art, created, ...p }: Seed): Product {
-  const gallery = shots(p.name, art);
+function make({ art, created, photos, ...p }: Seed & { photos?: [PhotoKey, PhotoKey] }): Product {
+  const gallery = photoShots(p.name, p.category, art, photos);
   return {
     price: null,
     customisationOptions: p.customisable
@@ -49,7 +61,7 @@ function make({ art, created, ...p }: Seed): Product {
     ...p,
     slug: slugify(p.name),
     currency: "INR",
-    images: gallery.slice(0, 2),
+    images: gallery,
     gallery,
     active: true,
     createdAt: created,

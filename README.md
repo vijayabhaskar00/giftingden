@@ -4,6 +4,10 @@ Premium gifting catalogue where every purchase action leads to WhatsApp. No cart
 
 Next.js (App Router) · TypeScript · Tailwind CSS v4 · Framer Motion · Lucide.
 
+## Deploy (GitHub Pages)
+
+Static export. `.github/workflows/deploy.yml` builds and publishes on every push to `main`. In repo Settings → Pages set Source to **GitHub Actions**. Optional repository *variables*: `WHATSAPP_NUMBER`, `ANALYTICS_ID`, `NEWSLETTER_ENDPOINT`, `LOCAL_PHOTOS`.
+
 ## Run
 
 ```bash
@@ -30,7 +34,7 @@ npm run build && npm start
 ## Before launch
 
 - Set `NEXT_PUBLIC_WHATSAPP_NUMBER` (the default is a placeholder) and `NEXT_PUBLIC_SITE_URL`.
-- Images are procedural SVG still-lifes. Add real photography by setting `src` on a product image (see `ProductImage`); `Media` renders it with `next/image`.
+- Photos are AI-generated and referenced from a CDN (`lib/photos.ts`). Run `node scripts/fetch-photos.mjs` to self-host compressed WebP, then set `LOCAL_PHOTOS=1`. Replace with your own photography any time.
 - Reviews, delivery promises, support hours and legal text are sample content. Replace and have legal text reviewed.
-- Newsletter posts to `/api/newsletter`, which forwards to `NEWSLETTER_WEBHOOK_URL`. Without it production returns 503.
+- Newsletter: set `NEXT_PUBLIC_NEWSLETTER_ENDPOINT` (e.g. a Formspree URL). Without it, sign-ups open a pre-filled WhatsApp message instead.
 - Set `NEXT_PUBLIC_ANALYTICS_ID` (GA4) to enable analytics; `whatsapp_enquiry` is the key conversion event.

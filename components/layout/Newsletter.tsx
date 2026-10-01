@@ -3,6 +3,9 @@
 import { useState, type FormEvent } from "react";
 import { Check } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import { openWhatsAppChat } from "@/lib/whatsapp-client";
+
+const ENDPOINT = process.env.NEXT_PUBLIC_NEWSLETTER_ENDPOINT;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -19,11 +22,18 @@ export default function Newsletter({ tone = "dark" }: { tone?: "dark" | "light" 
     }
     setState("loading");
     try {
-      const res = await fetch("/api/newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: value }) });
-      const data = (await res.json().catch(() => ({}))) as { error?: string };
-      if (!res.ok) throw new Error(data.error ?? "Something went wrong. Please try again.");
+      if (ENDPOINT) {
+        // Any form backend that accepts JSON (Formspree, Brevo, Make, Zapier, your own API).
+        const res = await fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ email: value, source: "giftingden-website" }) });
+        if (!res.ok) throw new Error("We couldn't save your sign-up. Please try again shortly.");
+        setMessage("Thank you. Gifting inspiration is on its way.");
+      } else {
+        // No backend configured: hand the request to the team on WhatsApp so no sign-up is lost.
+        openWhatsAppChat(`Hi Giftingden! Please add me to your newsletter: ${value}`, { source: "newsletter" });
+        setMessage("WhatsApp is opening. Send the message to join our list.");
+      }
       trackEvent("newsletter_subscribe");
-      setState("done"); setMessage("Thank you. Gifting inspiration is on its way.");
+      setState("done");
       setEmail("");
     } catch (err) {
       setState("error"); setMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");

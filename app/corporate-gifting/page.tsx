@@ -4,6 +4,7 @@ import GiftArt from "@/components/art/GiftArt";
 import CorporateForm from "@/components/forms/CorporateForm";
 import ProductGrid from "@/components/product/ProductGrid";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import { photoUrl } from "@/lib/photos";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
@@ -38,7 +39,7 @@ export default function CorporateGiftingPage() {
               <a href="#enquire" className="t-button inline-flex h-14 items-center justify-center rounded-sm border border-background/50 px-8 transition-colors hover:bg-background hover:text-foreground">Send a brief</a>
             </div>
           </div>
-          <div className="lg:col-span-5"><div className="relative aspect-[5/4] overflow-hidden rounded-md lg:aspect-[4/5]"><GiftArt art={{ tone: "charcoal", box: "champagne", items: ["notebook", "mug", "tin", "card"] }} alt="A branded corporate gift hamper" /></div></div>
+          <div className="lg:col-span-5"><div className="relative aspect-[5/4] overflow-hidden rounded-md lg:aspect-[4/5]"><GiftArt art={{ tone: "charcoal", box: "champagne", items: ["notebook", "mug", "tin", "card"], photo: photoUrl("corporate-stack") }} alt="A branded corporate gift hamper" /></div></div>
         </div>
       </section>
 

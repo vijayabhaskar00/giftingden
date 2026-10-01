@@ -1,20 +1,14 @@
 import type { NextConfig } from "next";
 
+// Static export for GitHub Pages. NEXT_PUBLIC_BASE_PATH is "/<repo>" on project pages, empty on a custom domain.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const config: NextConfig = {
-  images: { formats: ["image/avif", "image/webp"] },
+  output: "export",
+  trailingSlash: true,
+  basePath,
+  images: { unoptimized: true },
   poweredByHeader: false,
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
-        ],
-      },
-    ];
-  },
 };
 
 export default config;

@@ -8,6 +8,8 @@ export interface ArtSpec {
   tone: ToneKey;
   box?: ToneKey;
   items: ArtItem[];
+  /** Optional photograph. When set it replaces the illustration. */
+  photo?: string;
 }
 
 export type ImageVariant = "box" | "flatlay" | "detail" | "wrapped";

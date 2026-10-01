@@ -2,11 +2,11 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
-import GiftArt, { Backdrop, OpenBox, Table } from "@/components/art/GiftArt";
-import { TONES } from "@/components/art/tones";
+import GiftArt from "@/components/art/GiftArt";
+import { photoUrl } from "@/lib/photos";
 import type { ArtSpec } from "@/lib/types";
 
-const HERO_ART: ArtSpec = { tone: "blush", box: "ivory", items: ["flowers", "candle", "chocolates", "card"] };
+const HERO_ART: ArtSpec = { tone: "blush", box: "ivory", items: ["flowers", "candle", "chocolates", "card"], photo: photoUrl("hero") };
 
 /** Layered, parallax hero still-life in an arch frame. Layers drift at different speeds on scroll. */
 export default function HeroVisual() {
@@ -14,24 +14,13 @@ export default function HeroVisual() {
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const yBack = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["0%", "10%"]);
-  const yFront = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["0%", "-6%"]);
   const yCard = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["0%", "-18%"]);
-  const tone = TONES.blush;
-  const uid = "hero";
 
   return (
     <div ref={ref} className="relative mx-auto w-full max-w-[34rem] lg:max-w-none">
       <div className="relative aspect-[4/5] overflow-hidden rounded-b-md rounded-t-full bg-rose-soft sm:aspect-[5/6] lg:aspect-[4/5]">
         <motion.div style={{ y: yBack }} className="absolute inset-x-0 -inset-y-[6%]">
-          <svg viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice" className="h-full w-full" aria-hidden>
-            <Backdrop tone={tone} uid={uid} />
-            <Table tone={tone} />
-          </svg>
-        </motion.div>
-        <motion.div style={{ y: yFront }} className="absolute inset-0">
-          <svg role="img" aria-label="A blush gift box overflowing with flowers, a candle and chocolates" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMax slice" className="h-full w-full">
-            <g transform="translate(400 940) scale(1.28)"><OpenBox art={HERO_ART} /></g>
-          </svg>
+          <GiftArt art={HERO_ART} alt="A blush gift box overflowing with peonies, a scented candle, chocolates and a handwritten card" priority />
         </motion.div>
         <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/25 to-transparent" />
       </div>
@@ -39,7 +28,7 @@ export default function HeroVisual() {
       {/* floating secondary frame */}
       <motion.div style={{ y: yCard }} className="absolute -bottom-6 -left-3 w-[34%] md:-left-8 lg:-left-14">
         <div className="animate-float relative aspect-[4/5] overflow-hidden rounded-md border-[6px] border-background shadow-[0_18px_40px_rgb(42_37_34/0.18)]">
-          <GiftArt art={{ tone: "sage", box: "ivory", items: ["soap", "candle", "tin", "flowers"] }} variant="flatlay" alt="Flat lay of a self-care gift hamper" />
+          <GiftArt art={{ tone: "sage", box: "ivory", items: ["soap", "candle", "tin", "flowers"], photo: photoUrl("birthday-flat") }} variant="flatlay" alt="Flat lay of an open birthday gift box" />
         </div>
       </motion.div>
 

@@ -172,7 +172,11 @@ function Wrapped({ art, uid }: { art: ArtSpec; uid: string }) {
   );
 }
 
-export default function GiftArt({ art, variant = "box", alt, className }: GiftArtProps) {
+export default function GiftArt({ art, variant = "box", alt, className, priority }: GiftArtProps & { priority?: boolean }) {
+  if (art.photo) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={art.photo} alt={alt} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" className={`object-cover ${className ?? "absolute inset-0 h-full w-full"}`} />;
+  }
   const uid = useId().replace(/:/g, "");
   const scene: ReactNode =
     variant === "flatlay" ? <FlatLay art={art} uid={uid} /> :

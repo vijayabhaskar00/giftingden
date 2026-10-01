@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { LinkButton } from "@/components/ui/Button";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
 import { aboutValues } from "@/lib/data/content";
+import { photoUrl } from "@/lib/photos";
 import { buildMetadata } from "@/lib/seo";
 import { createGeneralWhatsAppMessage } from "@/lib/whatsapp";
 
@@ -23,7 +24,7 @@ export default function AboutPage() {
           <h1 className="t-h1">Gifting Is More Than Giving.</h1>
           <p className="t-lead mt-6 max-w-xl">Giftingden began with a simple belief: the best gifts aren&apos;t just opened. They&apos;re felt.</p>
         </div>
-        <div className="lg:col-span-5"><div className="relative aspect-[5/4] overflow-hidden rounded-md lg:aspect-[4/5]"><GiftArt art={{ tone: "rose", box: "ivory", items: ["flowers", "card", "candle"] }} variant="wrapped" alt="A Giftingden box with a handwritten tag" /></div></div>
+        <div className="lg:col-span-5"><div className="relative aspect-[5/4] overflow-hidden rounded-md lg:aspect-[4/5]"><GiftArt art={{ tone: "rose", box: "ivory", items: ["flowers", "card", "candle"], photo: photoUrl("ribbon") }} variant="wrapped" alt="A Giftingden box with a handwritten tag" /></div></div>
       </section>
 
       <section className="border-y border-border py-16 md:py-24">

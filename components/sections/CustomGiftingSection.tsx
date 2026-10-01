@@ -1,5 +1,6 @@
 import { LinkButton } from "@/components/ui/Button";
 import GiftArt from "@/components/art/GiftArt";
+import { photoUrl } from "@/lib/photos";
 import Reveal from "@/components/ui/Reveal";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
 import { customSteps } from "@/lib/data/content";
@@ -28,10 +29,10 @@ export default function CustomGiftingSection() {
         </Reveal>
         <Reveal delay={100} className="order-1 lg:order-2 lg:col-span-6">
           <div className="relative mx-auto grid max-w-xl grid-cols-6 gap-3">
-            <div className="relative col-span-4 aspect-[4/5] overflow-hidden rounded-md"><GiftArt art={{ tone: "ivory", box: "champagne", items: ["card", "chocolates", "candle", "flowers"] }} variant="flatlay" alt="Flat lay of a custom hamper with a personalised card" /></div>
+            <div className="relative col-span-4 aspect-[4/5] overflow-hidden rounded-md"><GiftArt art={{ tone: "ivory", box: "champagne", items: ["card", "chocolates", "candle", "flowers"], photo: photoUrl("custom") }} variant="flatlay" alt="Flat lay of a custom hamper with a personalised card" /></div>
             <div className="col-span-2 flex flex-col gap-3">
-              <div className="relative aspect-square overflow-hidden rounded-md"><GiftArt art={{ tone: "rose", items: ["card"] }} variant="detail" alt="Personalised message card" /></div>
-              <div className="relative flex-1 overflow-hidden rounded-md"><GiftArt art={{ tone: "sage", items: ["soap"] }} variant="detail" alt="Handmade soap in custom packaging" /></div>
+              <div className="relative aspect-square overflow-hidden rounded-md"><GiftArt art={{ tone: "rose", items: ["card"], photo: photoUrl("couple-close") }} variant="detail" alt="Personalised message card" /></div>
+              <div className="relative flex-1 overflow-hidden rounded-md"><GiftArt art={{ tone: "sage", items: ["soap"], photo: photoUrl("selfcare-close") }} variant="detail" alt="Handmade soap in custom packaging" /></div>
             </div>
           </div>
         </Reveal>

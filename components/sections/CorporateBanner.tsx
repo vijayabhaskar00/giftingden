@@ -1,5 +1,6 @@
 import { LinkButton } from "@/components/ui/Button";
 import GiftArt from "@/components/art/GiftArt";
+import { photoUrl } from "@/lib/photos";
 import Reveal from "@/components/ui/Reveal";
 
 export default function CorporateBanner() {
@@ -13,7 +14,7 @@ export default function CorporateBanner() {
           <div className="mt-9"><LinkButton href="/corporate-gifting" variant="light" size="lg">Explore Corporate Gifting</LinkButton></div>
         </Reveal>
         <Reveal delay={100} className="lg:col-span-5">
-          <div className="relative aspect-[5/4] overflow-hidden rounded-md"><GiftArt art={{ tone: "charcoal", box: "champagne", items: ["notebook", "mug", "tin", "card"] }} variant="box" alt="Corporate hampers with notebooks, mugs and gourmet tins" /></div>
+          <div className="relative aspect-[5/4] overflow-hidden rounded-md"><GiftArt art={{ tone: "charcoal", box: "champagne", items: ["notebook", "mug", "tin", "card"], photo: photoUrl("corporate-stack") }} variant="box" alt="Stack of charcoal corporate gift hampers with champagne ribbon" /></div>
         </Reveal>
       </div>
     </section>
