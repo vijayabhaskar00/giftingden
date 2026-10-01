@@ -33,7 +33,7 @@ npm run build && npm start
 
 ## Before launch
 
-- Set `NEXT_PUBLIC_WHATSAPP_NUMBER` (the default is a placeholder) and `NEXT_PUBLIC_SITE_URL`.
+- Set `NEXT_PUBLIC_WHATSAPP_NUMBER` (defaults to 91 90305 15380) and `NEXT_PUBLIC_SITE_URL`.
 - Photos are AI-generated and referenced from a CDN (`lib/photos.ts`). Run `node scripts/fetch-photos.mjs` to self-host compressed WebP, then set `LOCAL_PHOTOS=1`. Replace with your own photography any time.
 - Reviews, delivery promises, support hours and legal text are sample content. Replace and have legal text reviewed.
 - Newsletter: set `NEXT_PUBLIC_NEWSLETTER_ENDPOINT` (e.g. a Formspree URL). Without it, sign-ups open a pre-filled WhatsApp message instead.
