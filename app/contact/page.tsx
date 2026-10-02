@@ -9,8 +9,8 @@ import { site } from "@/lib/site";
 import { createGeneralWhatsAppMessage } from "@/lib/whatsapp";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Giftingden | Chat with a Gifting Expert",
-  description: "Reach Giftingden on WhatsApp, email or Instagram. Our gifting team will help you choose, customise and deliver the perfect gift.",
+  title: "Contact Gifthut | Chat with a Gifting Expert",
+  description: "Reach Gifthut on WhatsApp, email or Instagram. Our gifting team will help you choose, customise and deliver the perfect gift.",
   path: "/contact",
 });
 

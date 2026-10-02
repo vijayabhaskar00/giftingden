@@ -24,12 +24,12 @@ export default function Newsletter({ tone = "dark" }: { tone?: "dark" | "light" 
     try {
       if (ENDPOINT) {
         // Any form backend that accepts JSON (Formspree, Brevo, Make, Zapier, your own API).
-        const res = await fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ email: value, source: "giftingden-website" }) });
+        const res = await fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ email: value, source: "gifthut-website" }) });
         if (!res.ok) throw new Error("We couldn't save your sign-up. Please try again shortly.");
         setMessage("Thank you. Gifting inspiration is on its way.");
       } else {
         // No backend configured: hand the request to the team on WhatsApp so no sign-up is lost.
-        openWhatsAppChat(`Hi Giftingden! Please add me to your newsletter: ${value}`, { source: "newsletter" });
+        openWhatsAppChat(`Hi Gifthut! Please add me to your newsletter: ${value}`, { source: "newsletter" });
         setMessage("WhatsApp is opening. Send the message to join our list.");
       }
       trackEvent("newsletter_subscribe");

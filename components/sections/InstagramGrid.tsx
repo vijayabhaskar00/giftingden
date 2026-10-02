@@ -9,7 +9,7 @@ export default function InstagramGrid() {
     <section aria-labelledby="ig-title" className="section-y">
       <div className="container-page">
         <Reveal className="text-center">
-          <p className="t-eyebrow mb-4">Giftingden Moments</p>
+          <p className="t-eyebrow mb-4">Gifthut Moments</p>
           <h2 id="ig-title" className="t-h2">{site.instagramHandle}</h2>
           <p className="t-lead mx-auto mt-4 max-w-md">Tag us in your gifting moments.</p>
         </Reveal>

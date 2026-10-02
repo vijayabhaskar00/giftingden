@@ -5,14 +5,14 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Terms, Shipping & Cancellation",
-  description: "Giftingden's terms of use, shipping policy and cancellation policy for gifts enquired and confirmed through WhatsApp.",
+  description: "Gifthut's terms of use, shipping policy and cancellation policy for gifts enquired and confirmed through WhatsApp.",
   path: "/terms",
 });
 
 export default function TermsPage() {
   return (
     <LegalPage title="Terms & Policies" path="/terms" updated="1 October 2026">
-      <p>These terms apply to your use of this website and to gifts you enquire about and order from Giftingden. By using the website you agree to them.</p>
+      <p>These terms apply to your use of this website and to gifts you enquire about and order from Gifthut. By using the website you agree to them.</p>
       <h2>Ordering</h2>
       <p>This website is a catalogue. Prices shown are starting prices and may change with customisation, quantity and delivery location. An order is confirmed only once we have agreed the final items, price, delivery date and payment with you on WhatsApp.</p>
       <h2>Product information</h2>
@@ -31,7 +31,7 @@ export default function TermsPage() {
         <li>If your gift arrives damaged or incorrect, message us on WhatsApp within 24 hours with photos and we will repair, replace or refund as appropriate.</li>
       </ul>
       <h2>Intellectual property</h2>
-      <p>All content on this website, including text, photography and design, belongs to Giftingden and may not be reused without permission.</p>
+      <p>All content on this website, including text, photography and design, belongs to Gifthut and may not be reused without permission.</p>
       <h2>Liability</h2>
       <p>To the extent permitted by law, our liability for any order is limited to the amount you paid for it.</p>
       <h2>Contact</h2>

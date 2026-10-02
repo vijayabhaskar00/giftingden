@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Shop Gifts | Curated Gift Boxes & Hampers",
-  description: "Browse every Giftingden gift. Filter by occasion, recipient, price and style, then enquire on WhatsApp.",
+  description: "Browse every Gifthut gift. Filter by occasion, recipient, price and style, then enquire on WhatsApp.",
   path: "/gifts",
 });
 

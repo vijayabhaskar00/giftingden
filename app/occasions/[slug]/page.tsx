@@ -50,7 +50,7 @@ export default async function OccasionPage({ params }: { params: Promise<Params>
             <p className="t-lead mt-6 max-w-lg">{o.description} Every gift below can be personalised with a handwritten note.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <LinkButton href="#gifts" size="lg">See {products.length} gifts</LinkButton>
-              <WhatsAppButton message={`Hi Giftingden! I'm looking for a ${sanitizeText(o.name, 40).toLowerCase()} gift. Could you help me choose?`} label="Ask a Gifting Expert" variant="outline" size="lg" source={`occasion_${o.slug}`} occasion={o.slug} />
+              <WhatsAppButton message={`Hi Gifthut! I'm looking for a ${sanitizeText(o.name, 40).toLowerCase()} gift. Could you help me choose?`} label="Ask a Gifting Expert" variant="outline" size="lg" source={`occasion_${o.slug}`} occasion={o.slug} />
             </div>
           </div>
           <div className="lg:col-span-5">

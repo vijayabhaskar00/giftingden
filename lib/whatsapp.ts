@@ -14,13 +14,13 @@ export function createWhatsAppUrl(message?: string, phone: string = site.whatsap
 }
 
 export function createGeneralWhatsAppMessage(): string {
-  return "Hi Giftingden! I'd love some help choosing a gift. Could you guide me?";
+  return "Hi Gifthut! I'd love some help choosing a gift. Could you guide me?";
 }
 
 export function createProductWhatsAppMessage(product: Product, opts: { customisation?: boolean } = {}): string {
   if (product.whatsappMessage && !opts.customisation) return product.whatsappMessage;
   const lines = [
-    "Hi Giftingden! I'm interested in the following gift:",
+    "Hi Gifthut! I'm interested in the following gift:",
     `Product: ${product.name}`,
     `Product ID: ${product.sku}`,
     `Price: ${priceLabel(product)}`,
@@ -42,7 +42,7 @@ export function createCorporateWhatsAppMessage(d: CorporateDetails = {}): string
     ["Name", d.name], ["Company", d.company], ["Gifting for", d.occasion],
     ["Quantity", d.quantity], ["Budget per gift", d.budget], ["Needed by", d.date], ["Notes", d.notes],
   ].filter(([, v]) => v && sanitizeText(String(v)));
-  const head = "Hi Giftingden, I'm interested in corporate gifting. Please share your corporate gifting options.";
+  const head = "Hi Gifthut, I'm interested in corporate gifting. Please share your corporate gifting options.";
   if (!rows.length) return head;
   return [head, "", ...rows.map(([k, v]) => `${k}: ${sanitizeText(String(v))}`)].join("\n");
 }
@@ -56,14 +56,14 @@ export function createCustomGiftWhatsAppMessage(d: CustomGiftDetails = {}): stri
     ["Occasion", d.occasion], ["Budget", d.budget], ["Gifting for", d.recipient],
     ["Packaging", d.packaging], ["Personal note", d.note], ["Branding", d.branding ? "Yes, with logo" : undefined],
   ].filter(([, v]) => v && sanitizeText(String(v)));
-  const head = "Hi Giftingden, I'd like to create a customised gift package.";
+  const head = "Hi Gifthut, I'd like to create a customised gift package.";
   if (!rows.length) return head;
   return [head, "", ...rows.map(([k, v]) => `${k}: ${sanitizeText(String(v))}`)].join("\n");
 }
 
 export function createGiftFinderWhatsAppMessage(a: FinderAnswers, picks: Product[] = []): string {
   const lines = [
-    "Hi Giftingden! I used the Gift Finder and would love your help:",
+    "Hi Gifthut! I used the Gift Finder and would love your help:",
     a.recipient && `Gifting for: ${a.recipient}`,
     a.occasion && `Occasion: ${a.occasion}`,
     a.budget && `Budget: ${a.budget}`,
@@ -76,5 +76,5 @@ export function createGiftFinderWhatsAppMessage(a: FinderAnswers, picks: Product
 export function createContactWhatsAppMessage(d: { name?: string; message?: string }): string {
   const name = d.name ? sanitizeText(d.name, 60) : "";
   const msg = d.message ? sanitizeText(d.message, 500) : "I have a question.";
-  return `Hi Giftingden! ${name ? `I'm ${name}. ` : ""}${msg}`;
+  return `Hi Gifthut! ${name ? `I'm ${name}. ` : ""}${msg}`;
 }

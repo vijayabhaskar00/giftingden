@@ -18,7 +18,7 @@ export const faqs: Faq[] = [
   { question: "Do you accept bulk orders?", answer: "We do, from small team orders to several hundred hampers. Bulk orders benefit from tailored pricing and a sample for approval. Tell us your quantity and date on WhatsApp." },
   { question: "How long does delivery take?", answer: "Most orders arrive within 3–5 working days. Express and same-day delivery can be arranged in select cities. Custom and bulk orders need a little more lead time." },
   { question: "Can I request a specific budget?", answer: "Yes, and we encourage it. Tell us your budget and who the gift is for, and we'll recommend what works best within it." },
-  { question: "How do I contact Giftingden?", answer: "WhatsApp is the fastest way and our team replies during business hours. You can also email us or message us on Instagram." },
+  { question: "How do I contact Gifthut?", answer: "WhatsApp is the fastest way and our team replies during business hours. You can also email us or message us on Instagram." },
 ];
 
 /** Moments grid. Placeholders until real UGC is linked. */
@@ -30,7 +30,7 @@ export const instagramMoments: { alt: string; art: ArtSpec; variant: "box" | "fl
   { alt: "Rose-toned anniversary box", art: { tone: "rose", items: ["flowers", "chocolates", "candle"] }, variant: "box" },
   { alt: "Festive hamper with brass diyas", art: { tone: "cocoa", items: ["tin", "candle", "jar"] }, variant: "flatlay" },
   { alt: "Handwritten card detail", art: { tone: "ivory", items: ["card", "flowers"] }, variant: "detail" },
-  { alt: "Signature Giftingden packaging", art: { tone: "ivory", box: "champagne", items: ["card", "soap"] }, variant: "wrapped" },
+  { alt: "Signature Gifthut packaging", art: { tone: "ivory", box: "champagne", items: ["card", "soap"] }, variant: "wrapped" },
   { alt: "Thank-you box with honey jar", art: { tone: "sage", items: ["jar", "tin", "card"] }, variant: "box" },
 ];
 

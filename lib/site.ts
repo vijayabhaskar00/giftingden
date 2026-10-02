@@ -5,16 +5,16 @@
 const stripNonDigits = (v: string) => v.replace(/\D/g, "");
 
 export const site = {
-  name: "Giftingden",
+  name: "Gifthut",
   tagline: "Thoughtful Gifts. Beautifully Delivered.",
   description:
-    "Giftingden curates thoughtful gift boxes and hampers for birthdays, anniversaries, weddings, festivals and corporate gifting across India. Discover something special and enquire on WhatsApp.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.giftingden.com").replace(/\/$/, ""),
+    "Gifthut curates thoughtful gift boxes and hampers for birthdays, anniversaries, weddings, festivals and corporate gifting across India. Discover something special and enquire on WhatsApp.",
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.gifthut.com").replace(/\/$/, ""),
   /** Digits only, international format. Replace via NEXT_PUBLIC_WHATSAPP_NUMBER. */
   whatsappNumber: stripNonDigits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919030515380"),
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@giftingden.com",
-  instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/giftingden",
-  instagramHandle: "@giftingden",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@gifthut.com",
+  instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/gifthut",
+  instagramHandle: "@gifthut",
   analyticsId: process.env.NEXT_PUBLIC_ANALYTICS_ID || "",
   locale: "en_IN",
   currency: "INR",

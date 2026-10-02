@@ -5,14 +5,14 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
-  description: "How Giftingden collects, uses and protects your information when you browse our website or contact us on WhatsApp.",
+  description: "How Gifthut collects, uses and protects your information when you browse our website or contact us on WhatsApp.",
   path: "/privacy",
 });
 
 export default function PrivacyPage() {
   return (
     <LegalPage title="Privacy Policy" path="/privacy" updated="1 October 2026">
-      <p>Giftingden (&quot;we&quot;, &quot;us&quot;) respects your privacy. This policy explains what we collect when you use this website and how we use it. We do not run customer accounts, take online payments or store orders on this website.</p>
+      <p>Gifthut (&quot;we&quot;, &quot;us&quot;) respects your privacy. This policy explains what we collect when you use this website and how we use it. We do not run customer accounts, take online payments or store orders on this website.</p>
       <h2>What we collect</h2>
       <ul>
         <li><strong>Messages you send us.</strong> When you tap a WhatsApp button or submit a form on this site, your message is sent through WhatsApp. WhatsApp&apos;s own privacy policy applies to that conversation.</li>

@@ -162,7 +162,7 @@ function Wrapped({ art, uid }: { art: ArtSpec; uid: string }) {
         <g transform="translate(150 -150) rotate(8)">
           <rect x={-62} y={-62} width={124} height={156} rx={3} fill="#FFFCF6" stroke="#E4D9C8" />
           <circle cx={0} cy={-42} r={7} fill="none" stroke="#C9B99F" strokeWidth={3} />
-          <text x={0} y={22} textAnchor="middle" fontFamily="Georgia, 'Times New Roman', serif" fontSize={17} letterSpacing={3} fill="#3A3028">GIFTINGDEN</text>
+          <text x={0} y={22} textAnchor="middle" fontFamily="Georgia, 'Times New Roman', serif" fontSize={17} letterSpacing={3} fill="#3A3028">GIFTHUT</text>
           <line x1={-30} y1={36} x2={30} y2={36} stroke={box.ribbon} strokeWidth={1.5} />
           <text x={0} y={62} textAnchor="middle" fontFamily="Georgia, serif" fontStyle="italic" fontSize={13} fill="#7A6B5C">with love</text>
         </g>

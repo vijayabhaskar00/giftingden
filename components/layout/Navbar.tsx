@@ -42,7 +42,7 @@ export default function Navbar() {
       <a href="#main" className="sr-only z-[100] bg-foreground px-4 py-2 text-background focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to content</a>
       <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled || menuOpen ? "border-b border-border bg-background/92 backdrop-blur-md" : "border-b border-transparent bg-background"}`}>
         <div className={`container-page flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-[4.5rem] md:h-20"}`}>
-          <Link href="/" aria-label="Giftingden, home" className="shrink-0"><Logo className="text-foreground" /></Link>
+          <Link href="/" aria-label="Gifthut, home" className="shrink-0"><Logo className="text-foreground" /></Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex xl:gap-9">
             {primaryNav.map((l) => {

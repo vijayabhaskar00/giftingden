@@ -27,7 +27,7 @@ export function Logo({ className = "" }: { className?: string }) {
         <path d="M16 9v18" />
         <path d="M16 9c-1-5-7-6-7-3s5 3 7 3Zm0 0c1-5 7-6 7-3s-5 3-7 3Z" />
       </svg>
-      <span className="font-display text-[1.45rem] font-semibold uppercase leading-none tracking-[0.2em]">Giftingden</span>
+      <span className="font-display text-[1.45rem] font-semibold uppercase leading-none tracking-[0.2em]">Gifthut</span>
     </span>
   );
 }

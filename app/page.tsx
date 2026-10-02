@@ -18,7 +18,7 @@ import { faqs } from "@/lib/data/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Giftingden | Thoughtful Gifts. Beautifully Delivered.",
+  title: "Gifthut | Thoughtful Gifts. Beautifully Delivered.",
   description: "Curated gift boxes and hampers for birthdays, anniversaries, weddings, festivals and corporate gifting across India. Find a gift they'll remember and enquire on WhatsApp.",
   path: "/",
 });

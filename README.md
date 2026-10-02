@@ -1,4 +1,4 @@
-# Giftingden
+# Gifthut
 
 Premium gifting catalogue where every purchase action leads to WhatsApp. No cart, checkout, payments or logins.
 

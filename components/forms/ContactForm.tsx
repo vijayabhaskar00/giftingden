@@ -17,7 +17,7 @@ export default function ContactForm() {
     (v) => openWhatsAppChat(createContactWhatsAppMessage({ ...v }), { source: "contact_form" }),
   );
   return (
-    <form onSubmit={submit} noValidate aria-label="Message Giftingden" className="grid gap-5">
+    <form onSubmit={submit} noValidate aria-label="Message Gifthut" className="grid gap-5">
       <TextField id="name" label="Your name" required autoComplete="name" maxLength={60} value={values.name} onChange={(e) => set("name", e.target.value)} error={errors.name} />
       <TextArea id="message" label="How can we help?" required maxLength={500} value={values.message} onChange={(e) => set("message", e.target.value)} error={errors.message} />
       <div>

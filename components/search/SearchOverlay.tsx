@@ -148,7 +148,7 @@ export default function SearchOverlay({ docs, onClose }: { docs: SearchDoc[]; on
               <p className="t-h3">Hmm… we couldn&apos;t find that gift.</p>
               <p className="t-caption mt-2 text-base">Tell us what you&apos;re looking for and we&apos;ll find it.</p>
               <div className="mt-6 flex justify-center">
-                <WhatsAppButton message={`Hi Giftingden! I searched for "${q.slice(0, 80)}" but couldn't find the right gift. Could you help?`} label="Talk to a Gifting Expert" source="search_empty" />
+                <WhatsAppButton message={`Hi Gifthut! I searched for "${q.slice(0, 80)}" but couldn't find the right gift. Could you help?`} label="Talk to a Gifting Expert" source="search_empty" />
               </div>
             </div>
           )}

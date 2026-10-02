@@ -12,7 +12,7 @@ export default function Hero() {
     <section aria-labelledby="hero-title" className="relative overflow-hidden">
       <div className="container-page grid items-center gap-14 pb-20 pt-8 md:pb-24 lg:grid-cols-12 lg:gap-10 lg:pb-28 lg:pt-10">
         <div className="lg:col-span-6 xl:col-span-6">
-          <p className="t-eyebrow animate-rise mb-6" style={{ animationDelay: "100ms" }}>Giftingden · Curated in India</p>
+          <p className="t-eyebrow animate-rise mb-6" style={{ animationDelay: "100ms" }}>Gifthut · Curated in India</p>
           <h1 id="hero-title" className="t-display">
             <Word delay={150}>Gifts</Word> <Word delay={230}>That</Word><br />
             <Word delay={310}>Say</Word> <Word delay={390} italic>More.</Word>

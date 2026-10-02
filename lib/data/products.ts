@@ -71,7 +71,7 @@ function make({ art, created, photos, ...p }: Seed & { photos?: [PhotoKey, Photo
 
 const products: Product[] = [
   make({
-    id: "gd-001", sku: "GD-001", name: "The Celebration Box", created: "2026-01-12",
+    id: "gh-001", sku: "GH-001", name: "The Celebration Box", created: "2026-01-12",
     shortDescription: "An elegant mix of delightful treats and thoughtful keepsakes.",
     description:
       "An elegant collection of delightful treats and thoughtful keepsakes, created to make birthdays feel a little more special. Every box is hand-assembled, tissue-wrapped and finished with a satin ribbon.",
@@ -83,7 +83,7 @@ const products: Product[] = [
     art: { tone: "blush", box: "ivory", items: ["chocolates", "candle", "card", "flowers"] },
   }),
   make({
-    id: "gd-002", sku: "GD-002", name: "The Self Care Edit", created: "2026-01-20",
+    id: "gh-002", sku: "GH-002", name: "The Self Care Edit", created: "2026-01-20",
     shortDescription: "A slow evening, wrapped up with a ribbon.",
     description:
       "For the person who gives everything to everyone else. A calming collection of bath, body and tea rituals, packed in a keepsake box she'll reuse long after the last candle burns down.",
@@ -95,7 +95,7 @@ const products: Product[] = [
     art: { tone: "sage", box: "ivory", items: ["soap", "candle", "tin", "flowers"] },
   }),
   make({
-    id: "gd-003", sku: "GD-003", name: "The Love Box", created: "2026-02-01",
+    id: "gh-003", sku: "GH-003", name: "The Love Box", created: "2026-02-01",
     shortDescription: "Everything a quiet, romantic evening needs.",
     description:
       "A romantic edit for anniversaries and Valentine's: dark chocolates, a fragrant candle, dried flowers and a letter-style card, arranged in a blush-and-rose box tied with a satin bow.",
@@ -107,7 +107,7 @@ const products: Product[] = [
     art: { tone: "rose", box: "blush", items: ["flowers", "chocolates", "candle", "card"] },
   }),
   make({
-    id: "gd-004", sku: "GD-004", name: "The Luxe Hamper", created: "2026-02-10",
+    id: "gh-004", sku: "GH-004", name: "The Luxe Hamper", created: "2026-02-10",
     shortDescription: "Rare finds, generously presented.",
     description:
       "Our most generous hamper. Single-estate preserves, artisanal chocolates, a fine fragrance candle and a bottle of premium sparkling juice, presented in a rigid black keepsake box with gold foiling.",
@@ -119,7 +119,7 @@ const products: Product[] = [
     art: { tone: "charcoal", box: "charcoal", items: ["bottle", "tin", "candle", "chocolates"] },
   }),
   make({
-    id: "gd-005", sku: "GD-005", name: "The Corporate Classic", created: "2026-02-18",
+    id: "gh-005", sku: "GH-005", name: "The Corporate Classic", created: "2026-02-18",
     shortDescription: "A polished, no-fuss hamper for teams and clients.",
     description:
       "Understated and well made. Desk-friendly essentials and gourmet snacks in a clean kraft-and-charcoal box, with space for your logo and a custom message. Available in bulk with consistent quality.",
@@ -132,7 +132,7 @@ const products: Product[] = [
     art: { tone: "charcoal", box: "champagne", items: ["notebook", "mug", "tin", "card"] },
   }),
   make({
-    id: "gd-006", sku: "GD-006", name: "The Wellness Box", created: "2026-02-25",
+    id: "gh-006", sku: "GH-006", name: "The Wellness Box", created: "2026-02-25",
     shortDescription: "Small rituals for a calmer week.",
     description:
       "Thoughtfully chosen for anyone who needs a pause: herbal teas, a gratitude journal, a calming balm and a candle that smells like first rain. Wrapped in recycled, plantable-seed paper.",
@@ -144,7 +144,7 @@ const products: Product[] = [
     art: { tone: "sage", box: "sage", items: ["tin", "notebook", "candle", "soap"] },
   }),
   make({
-    id: "gd-007", sku: "GD-007", name: "The Sweet Moments Box", created: "2026-03-03",
+    id: "gh-007", sku: "GH-007", name: "The Sweet Moments Box", created: "2026-03-03",
     shortDescription: "Chocolates, cookies and a smile in a box.",
     description:
       "A cheerful little box of handmade cookies, truffles and a tiny bouquet of dried blooms. Easy to send, impossible to forget. Our favourite way to say 'thinking of you' without the fuss.",
@@ -156,7 +156,7 @@ const products: Product[] = [
     art: { tone: "blush", box: "blush", items: ["chocolates", "flowers", "card"] },
   }),
   make({
-    id: "gd-008", sku: "GD-008", name: "The Birthday Edit", created: "2026-03-10",
+    id: "gh-008", sku: "GH-008", name: "The Birthday Edit", created: "2026-03-10",
     shortDescription: "Everything a birthday needs, thoughtfully edited.",
     description:
       "A fuller birthday gift: a keepsake mug, a hand-poured candle, gourmet chocolate, a personalised card and a small surprise that changes every season. Packed with confetti-free, fuss-free elegance.",
@@ -168,7 +168,7 @@ const products: Product[] = [
     art: { tone: "champagne", box: "blush", items: ["mug", "candle", "chocolates", "card"] },
   }),
   make({
-    id: "gd-009", sku: "GD-009", name: "The Couple's Box", created: "2026-03-17",
+    id: "gh-009", sku: "GH-009", name: "The Couple's Box", created: "2026-03-17",
     shortDescription: "A shared evening, curated for two.",
     description:
       "Two of everything, deliberately. Matching ceramic mugs, a sharing chocolate board, tea for two and a conversation-starter card deck. A gift for couples, for newlyweds, or for anyone who wants to be one.",
@@ -180,7 +180,7 @@ const products: Product[] = [
     art: { tone: "rose", box: "ivory", items: ["mug", "chocolates", "tin", "card"] },
   }),
   make({
-    id: "gd-010", sku: "GD-010", name: "The Thank You Box", created: "2026-03-24",
+    id: "gh-010", sku: "GH-010", name: "The Thank You Box", created: "2026-03-24",
     shortDescription: "Gratitude, said properly.",
     description:
       "A warm, generous way to say thank you to a mentor, a host or a friend who showed up. Gourmet snacks, a pot of honey and a handwritten note, simply and beautifully presented.",
@@ -192,7 +192,7 @@ const products: Product[] = [
     art: { tone: "ivory", box: "champagne", items: ["jar", "tin", "card", "flowers"] },
   }),
   make({
-    id: "gd-011", sku: "GD-011", name: "The Festive Edit", created: "2026-08-02",
+    id: "gh-011", sku: "GH-011", name: "The Festive Edit", created: "2026-08-02",
     shortDescription: "Festival warmth, beautifully shared.",
     description:
       "A festive hamper with dry fruits, nuts, hand-poured diya candles and sweet treats, presented in a gold-trimmed box. Made for Diwali, Christmas, Eid and every family gathering in between.",
@@ -204,7 +204,7 @@ const products: Product[] = [
     art: { tone: "cocoa", box: "champagne", items: ["tin", "jar", "candle", "chocolates"] },
   }),
   make({
-    id: "gd-012", sku: "GD-012", name: "The Minimalist Gift", created: "2026-04-05",
+    id: "gh-012", sku: "GH-012", name: "The Minimalist Gift", created: "2026-04-05",
     shortDescription: "Quiet, considered, effortlessly stylish.",
     description:
       "For people who prefer fewer, better things. One beautifully made candle, a linen-bound notebook and a bar of small-batch chocolate, in a plain ivory box with a single ribbon.",
@@ -216,7 +216,7 @@ const products: Product[] = [
     art: { tone: "ivory", box: "ivory", items: ["candle", "notebook", "chocolates"] },
   }),
   make({
-    id: "gd-013", sku: "GD-013", name: "The Gourmet Box", created: "2026-04-12",
+    id: "gh-013", sku: "GH-013", name: "The Gourmet Box", created: "2026-04-12",
     shortDescription: "For people who plan their holidays around lunch.",
     description:
       "A well-stocked box for food lovers: olive oil infused with herbs, handmade preserves, artisanal crackers, a block of dark chocolate and a premium tea selection.",
@@ -228,7 +228,7 @@ const products: Product[] = [
     art: { tone: "cocoa", box: "ivory", items: ["bottle", "jar", "tin", "chocolates"] },
   }),
   make({
-    id: "gd-014", sku: "GD-014", name: "The New Beginnings Box", created: "2026-04-20",
+    id: "gh-014", sku: "GH-014", name: "The New Beginnings Box", created: "2026-04-20",
     shortDescription: "For new homes, new jobs and new chapters.",
     description:
       "A hopeful hamper to mark a fresh start: a small potted plant, a candle for the first evening, a notebook for plans and a jar of honey to sweeten the days ahead.",
@@ -240,7 +240,7 @@ const products: Product[] = [
     art: { tone: "sage", box: "ivory", items: ["flowers", "candle", "notebook", "jar"] },
   }),
   make({
-    id: "gd-015", sku: "GD-015", name: "The Executive Hamper", created: "2026-04-28",
+    id: "gh-015", sku: "GH-015", name: "The Executive Hamper", created: "2026-04-28",
     shortDescription: "Quietly impressive. Made for the boardroom.",
     description:
       "A premium corporate hamper for leaders and key clients: a leather-bound notebook, a premium sipper, gourmet nuts, fine chocolate and a hand-finished presentation box with your branding.",
@@ -253,7 +253,7 @@ const products: Product[] = [
     art: { tone: "charcoal", box: "cocoa", items: ["notebook", "bottle", "tin", "chocolates"] },
   }),
   make({
-    id: "gd-016", sku: "GD-016", name: "The Welcome Kit", created: "2026-05-05",
+    id: "gh-016", sku: "GH-016", name: "The Welcome Kit", created: "2026-05-05",
     shortDescription: "A first-day welcome they'll actually keep.",
     description:
       "Make new joiners feel expected. A branded notebook, a mug, a desk plant and a handwritten welcome card from the team, sent to their home or desk before day one.",
@@ -266,7 +266,7 @@ const products: Product[] = [
     art: { tone: "charcoal", box: "sage", items: ["notebook", "mug", "flowers", "card"] },
   }),
   make({
-    id: "gd-017", sku: "GD-017", name: "The Bridesmaid Box", created: "2026-05-12",
+    id: "gh-017", sku: "GH-017", name: "The Bridesmaid Box", created: "2026-05-12",
     shortDescription: "A thank-you for the women who stood beside her.",
     description:
       "A beautiful 'will you be my bridesmaid' keepsake: a silk scrunchie, scented candle, rose body balm, a personalised card and a small mirror. Available in sets, with names on every card.",
@@ -279,7 +279,7 @@ const products: Product[] = [
     art: { tone: "blush", box: "rose", items: ["soap", "candle", "card", "flowers"] },
   }),
   make({
-    id: "gd-018", sku: "GD-018", name: "The Shaadi Hamper", created: "2026-05-20",
+    id: "gh-018", sku: "GH-018", name: "The Shaadi Hamper", created: "2026-05-20",
     shortDescription: "Gifting worthy of the biggest day.",
     description:
       "A grand wedding hamper for the couple or the family: handcrafted sweets, dry fruits, a pair of brass diyas, a bottle of sparkling juice and a blessing card, in an ornate gold-trimmed trunk.",
@@ -291,7 +291,7 @@ const products: Product[] = [
     art: { tone: "champagne", box: "cocoa", items: ["bottle", "tin", "candle", "flowers"] },
   }),
   make({
-    id: "gd-019", sku: "GD-019", name: "The Build-Your-Own Hamper", created: "2026-06-01",
+    id: "gh-019", sku: "GH-019", name: "The Build-Your-Own Hamper", created: "2026-06-01",
     shortDescription: "You choose the theme. We handle the rest.",
     description:
       "Tell us who it's for, your budget and the feeling you're after. Our gifting team curates a hamper around them, with your choice of products, packaging, message card and branding.",
@@ -304,7 +304,7 @@ const products: Product[] = [
     art: { tone: "champagne", box: "ivory", items: ["card", "chocolates", "candle", "bottle"] },
   }),
   make({
-    id: "gd-020", sku: "GD-020", name: "The Traveller's Edit", created: "2026-06-10",
+    id: "gh-020", sku: "GH-020", name: "The Traveller's Edit", created: "2026-06-10",
     shortDescription: "For the one with a passport that's always out.",
     description:
       "A handsome gift for people who live out of a carry-on: a leather luggage tag, a compact journal, travel-size amenities, trail snacks and a handwritten bon-voyage card.",
@@ -316,7 +316,7 @@ const products: Product[] = [
     art: { tone: "cocoa", box: "sage", items: ["notebook", "tin", "bottle", "card"] },
   }),
   make({
-    id: "gd-021", sku: "GD-021", name: "The Desk Companion", created: "2026-06-18",
+    id: "gh-021", sku: "GH-021", name: "The Desk Companion", created: "2026-06-18",
     shortDescription: "Make the workday feel a little more considered.",
     description:
       "A small, smart set for a better desk: a wireless charging pad, a ceramic mug, a premium notebook and a gourmet coffee sachet set, in a slim, minimal box.",
@@ -328,7 +328,7 @@ const products: Product[] = [
     art: { tone: "charcoal", box: "ivory", items: ["mug", "notebook", "tin"] },
   }),
   make({
-    id: "gd-022", sku: "GD-022", name: "The Little Thank You", created: "2026-07-01",
+    id: "gh-022", sku: "GH-022", name: "The Little Thank You", created: "2026-07-01",
     shortDescription: "A small gesture that lands beautifully.",
     description:
       "Compact, sweet and ready to go: a handmade chocolate bar, a mini candle and a handwritten card in a ribboned kraft sleeve. Brilliant for return gifts, teachers and teammates.",
@@ -340,7 +340,7 @@ const products: Product[] = [
     art: { tone: "ivory", box: "blush", items: ["chocolates", "candle", "card"] },
   }),
   make({
-    id: "gd-023", sku: "GD-023", name: "The Diwali Gathering", created: "2026-08-20",
+    id: "gh-023", sku: "GH-023", name: "The Diwali Gathering", created: "2026-08-20",
     shortDescription: "Light, sweetness and a table full of family.",
     description:
       "A festive hamper made for sharing. Assorted mithai, roasted nuts, a pair of scented diyas and a decorative torana, packed in a rich cocoa-and-gold box that looks lovely on any festive table.",
