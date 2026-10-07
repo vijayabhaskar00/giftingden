@@ -18,7 +18,7 @@ export const CATEGORY_PHOTOS: Record<CategorySlug, [PhotoKey, PhotoKey]> = {
   "couple-hampers": ["couple", "couple-close"],
   "corporate-hampers": ["corporate", "corporate-flat"],
   "luxury-hampers": ["luxury", "gourmet"],
-  "festive-hampers": ["festive", "festive-close"],
+  "festive-hampers": ["diwali-kraft", "diwali-white"],
   "bridesmaid-gifts": ["bridesmaid", "bridesmaid-close"],
   "wedding-hampers": ["wedding", "wedding-close"],
   "new-employee-kits": ["employee", "employee-close"],
@@ -192,6 +192,7 @@ const products: Product[] = [
     art: { tone: "ivory", box: "champagne", items: ["jar", "tin", "card", "flowers"] },
   }),
   make({
+    photos: ["diwali-jute", "diwali-kraft"],
     id: "gh-011", sku: "GH-011", name: "The Festive Edit", created: "2026-08-02",
     shortDescription: "Festival warmth, beautifully shared.",
     description:
@@ -340,6 +341,7 @@ const products: Product[] = [
     art: { tone: "ivory", box: "blush", items: ["chocolates", "candle", "card"] },
   }),
   make({
+    photos: ["diwali-kraft", "diwali-jute"],
     id: "gh-023", sku: "GH-023", name: "The Diwali Gathering", created: "2026-08-20",
     shortDescription: "Light, sweetness and a table full of family.",
     description:

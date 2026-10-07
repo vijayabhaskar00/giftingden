@@ -32,11 +32,13 @@ export const PHOTO_FILES = {
   "corporate-stack": "hf_20261001_083248_fd669bdb-f15a-4ecf-87a6-799ad62d2b90",
 } as const;
 
-export type PhotoKey = keyof typeof PHOTO_FILES;
+/** Photos shipped in /public/photos (supplied by the shop), always served locally. */
+export const LOCAL_PHOTOS = ["diwali-kraft", "diwali-jute", "diwali-white"] as const;
+
+export type PhotoKey = keyof typeof PHOTO_FILES | (typeof LOCAL_PHOTOS)[number];
 
 export function photoUrl(key: PhotoKey): string {
-  if (process.env.NEXT_PUBLIC_LOCAL_PHOTOS === "1") {
-    return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/photos/${key}.webp`;
-  }
-  return `${CDN}${PHOTO_FILES[key]}.png`;
+  const local = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/photos/${key}.webp`;
+  if ((LOCAL_PHOTOS as readonly string[]).includes(key) || process.env.NEXT_PUBLIC_LOCAL_PHOTOS === "1") return local;
+  return `${CDN}${PHOTO_FILES[key as keyof typeof PHOTO_FILES]}.png`;
 }
