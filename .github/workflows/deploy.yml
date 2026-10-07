@@ -30,8 +30,8 @@ jobs:
       - run: npx tsc --noEmit
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /giftingden
-          NEXT_PUBLIC_SITE_URL: https://vijayabhaskar00.github.io/giftingden
+          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_SITE_URL: https://gifthut.in
           NEXT_PUBLIC_WHATSAPP_NUMBER: ${{ vars.WHATSAPP_NUMBER }}
           NEXT_PUBLIC_ANALYTICS_ID: ${{ vars.ANALYTICS_ID }}
           NEXT_PUBLIC_NEWSLETTER_ENDPOINT: ${{ vars.NEWSLETTER_ENDPOINT }}

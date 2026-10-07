@@ -9,10 +9,10 @@ export const site = {
   tagline: "Corporate Gifting, Beautifully Delivered.",
   description:
     "Gifthut designs premium corporate gifts and branded hampers for employee onboarding, client gifting, Diwali and festive gifting, events and bulk orders across India. Get a quote on WhatsApp.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.gifthut.com").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://gifthut.in").replace(/\/$/, ""),
   /** Digits only, international format. Replace via NEXT_PUBLIC_WHATSAPP_NUMBER. */
   whatsappNumber: stripNonDigits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919030515380"),
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@gifthut.com",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@gifthut.in",
   instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/gifthut",
   instagramHandle: "@gifthut",
   analyticsId: process.env.NEXT_PUBLIC_ANALYTICS_ID || "",
@@ -24,6 +24,9 @@ export const site = {
     "Delivered across India to one address or many. Ready hampers usually ship in 3–5 working days; branded and bulk orders in 7–10.",
 } as const;
 
+/** Absolute URL matching the static export's trailing-slash routes (/gifts/ not /gifts). */
 export function absoluteUrl(path = "/"): string {
-  return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
+  const p = path.startsWith("/") ? path : `/${path}`;
+  const withSlash = /[.?#]/.test(p.split("/").pop() ?? "") || p.endsWith("/") ? p : `${p}/`;
+  return `${site.url}${withSlash}`;
 }
