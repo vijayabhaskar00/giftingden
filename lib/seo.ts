@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { priceLabel } from "./format";
 import { absoluteUrl, site } from "./site";
 import type { Faq, Product } from "./types";
 
@@ -59,12 +58,4 @@ export const productLd = (p: Product) => ({
   url: absoluteUrl(`/gift/${p.slug}`),
   image: [absoluteUrl(`/gift/${p.slug}/opengraph-image`)],
   brand: { "@type": "Brand", name: site.name },
-  offers: {
-    "@type": p.price == null ? "AggregateOffer" : "Offer",
-    priceCurrency: p.currency,
-    ...(p.price == null ? { lowPrice: p.startingPrice } : { price: p.price }),
-    availability: "https://schema.org/InStock",
-    url: absoluteUrl(`/gift/${p.slug}`),
-    description: priceLabel(p),
-  },
 });

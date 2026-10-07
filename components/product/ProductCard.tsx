@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Media from "@/components/ui/Media";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
-import { priceLabel } from "@/lib/format";
 import { createProductWhatsAppMessage } from "@/lib/whatsapp";
 import type { Product } from "@/lib/types";
 
@@ -14,7 +13,7 @@ export default function ProductCard({ product, priority, wide, sizes = "(min-wid
 
   return (
     <article className={`group flex flex-col ${wide ? "lg:col-span-2" : ""}`}>
-      <Link href={href} aria-label={`${product.name}, ${priceLabel(product)}`} className="relative block overflow-hidden rounded-md bg-beige">
+      <Link href={href} aria-label={product.name} className="relative block overflow-hidden rounded-md bg-beige">
         <div className={`relative ${wide ? "aspect-[4/5] lg:aspect-[8/5]" : "aspect-[4/5]"}`}>
           <Media image={primary} sizes={wide ? "(min-width:1024px) 50vw, 50vw" : sizes} priority={priority}
             className="transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]" />
@@ -40,7 +39,7 @@ export default function ProductCard({ product, priority, wide, sizes = "(min-wid
         </h3>
         <p className="t-caption mt-1.5 line-clamp-2">{product.shortDescription}</p>
         <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-          <p className="text-[0.95rem] font-semibold">{priceLabel(product)}</p>
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted">Bulk pricing on request</p>
           {product.customisable && <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-accent-ink">Customisable</p>}
         </div>
         <WhatsAppButton

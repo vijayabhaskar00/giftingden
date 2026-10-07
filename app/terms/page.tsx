@@ -14,7 +14,7 @@ export default function TermsPage() {
     <LegalPage title="Terms & Policies" path="/terms" updated="1 October 2026">
       <p>These terms apply to your use of this website and to gifts you enquire about and order from Gifthut. By using the website you agree to them.</p>
       <h2>Ordering</h2>
-      <p>This website is a catalogue. Prices shown are starting prices and may change with customisation, quantity and delivery location. An order is confirmed only once we have agreed the final items, price, delivery date and payment with you on WhatsApp.</p>
+      <p>This website is a catalogue. Prices are not listed on this website. Quotes depend on products, customisation, quantity and delivery location. An order is confirmed only once we have agreed the final items, price, delivery date and payment with you on WhatsApp.</p>
       <h2>Product information</h2>
       <p>We take care to describe and photograph each gift accurately. Contents may be substituted with items of equal or higher value when a specific product is unavailable. Handmade and seasonal items can vary slightly.</p>
       <h2 id="shipping">Shipping policy</h2>

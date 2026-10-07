@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import LoadingState from "@/components/ui/LoadingState";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { getAllProducts } from "@/lib/catalogue";
-import { priceBands, recipients, styles } from "@/lib/data/taxonomy";
+import { recipients, styles } from "@/lib/data/taxonomy";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -26,7 +26,6 @@ export default function GiftsPage() {
       <SectionHeader as="h1" className="mt-6 md:mt-8" eyebrow="Corporate hampers" title="Find the right hamper for your people." subtitle="Search and filter by occasion, audience and budget per gift. When something fits, ask for a quote on WhatsApp with your quantity and branding." />
 
       <nav aria-label="Browse collections" className="no-scrollbar mt-8 flex gap-2 overflow-x-auto pb-1">
-        {priceBands.map((b) => <Link key={b.slug} href={`/gifts?price=${b.slug}`} className={`${chip} shrink-0`}>{b.name}</Link>)}
         {recipients.map((r) => <Link key={r.slug} href={`/gifts?recipient=${r.slug}`} className={`${chip} shrink-0`}>{r.name}</Link>)}
         {styles.map((s) => <Link key={s.slug} href={`/gifts?style=${s.slug}`} className={`${chip} shrink-0`}>{s.name}</Link>)}
       </nav>

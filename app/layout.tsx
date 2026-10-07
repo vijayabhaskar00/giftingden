@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/layout/Analytics";
+import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import SearchProvider from "@/components/search/SearchProvider";
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <JsonLd data={[organizationLd(), websiteLd()]} />
         <SearchProvider docs={docs}>
+          <AnnouncementBar />
           <Navbar />
           <main id="main" tabIndex={-1} className="outline-none">{children}</main>
           <Footer />

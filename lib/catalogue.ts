@@ -1,16 +1,19 @@
 import { allProducts } from "./data/products";
-import { getPriceBand, priceBands } from "./data/taxonomy";
-import { productPriceValue } from "./format";
 import type { Product } from "./types";
 
 /** The minimum a product needs to be searchable. Lets the client search a slim index. */
-export type Searchable = Pick<Product, "id" | "name" | "slug" | "shortDescription" | "category" | "occasion" | "recipient" | "style" | "tags" | "contents" | "idealFor" | "sku" | "price" | "startingPrice">;
+export type Searchable = Pick<Product, "id" | "name" | "slug" | "shortDescription" | "category" | "occasion" | "recipient" | "style" | "tags" | "contents" | "idealFor" | "sku">;
 
 /* ---------- Data access (swap for CMS / Shopify later) ---------- */
 
 export const getAllProducts = (): Product[] => allProducts.filter((p) => p.active);
 export const getProductBySlug = (slug: string) => getAllProducts().find((p) => p.slug === slug);
-export const getFeatured = (limit = 4) => getAllProducts().filter((p) => p.featured).slice(0, limit);
+/** Featured hampers, with Diwali / festive gifts first while the season is on. */
+export const getFeatured = (limit = 4) =>
+  getAllProducts()
+    .filter((p) => p.featured)
+    .sort((a, b) => Number(b.category === "festive-hampers") - Number(a.category === "festive-hampers"))
+    .slice(0, limit);
 export const getBestsellers = () => getAllProducts().filter((p) => p.bestseller);
 export const getByCategory = (slug: string) => getAllProducts().filter((p) => p.category === slug);
 export const getByOccasion = (slug: string) => getAllProducts().filter((p) => p.occasion.includes(slug as never));
@@ -32,24 +35,16 @@ export function getRelated(product: Product, limit = 4): Product[] {
 
 /* ---------- Filtering & sorting (pure, runs on server or client) ---------- */
 
-export type SortKey = "featured" | "price-asc" | "price-desc" | "newest";
+export type SortKey = "featured" | "newest";
 
 export interface Filters {
   q?: string;
   category?: string;
   occasion?: string;
   recipient?: string;
-  price?: string;
   style?: string;
   customisable?: boolean;
   bestseller?: boolean;
-}
-
-export function inPriceBand(p: Product, bandSlug: string): boolean {
-  const band = getPriceBand(bandSlug);
-  if (!band) return true;
-  const v = productPriceValue(p);
-  return v >= band.min && v <= band.max;
 }
 
 export function filterProducts(list: Product[], f: Filters): Product[] {
@@ -61,7 +56,6 @@ export function filterProducts(list: Product[], f: Filters): Product[] {
       (!f.occasion || p.occasion.includes(f.occasion as never)) &&
       (!f.recipient || p.recipient.includes(f.recipient as never)) &&
       (!f.style || p.style.includes(f.style as never)) &&
-      (!f.price || inPriceBand(p, f.price)) &&
       (!f.customisable || p.customisable) &&
       (!f.bestseller || p.bestseller),
   );
@@ -70,11 +64,14 @@ export function filterProducts(list: Product[], f: Filters): Product[] {
 export function sortProducts(list: Product[], sort: SortKey): Product[] {
   const arr = [...list];
   switch (sort) {
-    case "price-asc": return arr.sort((a, b) => productPriceValue(a) - productPriceValue(b));
-    case "price-desc": return arr.sort((a, b) => productPriceValue(b) - productPriceValue(a));
     case "newest": return arr.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
     default:
-      return arr.sort((a, b) => Number(b.featured) - Number(a.featured) || Number(b.bestseller) - Number(a.bestseller));
+      return arr.sort(
+        (a, b) =>
+          Number(b.category === "festive-hampers") - Number(a.category === "festive-hampers") ||
+          Number(b.featured) - Number(a.featured) ||
+          Number(b.bestseller) - Number(a.bestseller),
+      );
   }
 }
 
@@ -100,14 +97,6 @@ const SYNONYMS: Record<string, { recipient?: string; occasion?: string; style?: 
   tech: { style: "tech" }, desk: { style: "tech" },
 };
 
-/** Extracts a budget ceiling from queries like "₹2000", "under 1,500", "2k". */
-export function parseBudget(q: string): number | null {
-  const m = q.toLowerCase().replace(/,/g, "").match(/(?:₹|rs\.?|inr|under|below|upto|up to)?\s*(\d+(?:\.\d+)?)\s*(k)?\b/);
-  if (!m) return null;
-  const n = parseFloat(m[1]) * (m[2] ? 1000 : 1);
-  return n >= 100 ? n : null;
-}
-
 const normalise = (s: string) => s.toLowerCase().replace(/[^a-z0-9₹\s-]/g, " ");
 
 
@@ -122,7 +111,6 @@ export function searchProducts<T extends Searchable>(list: T[], query: string): 
   const q = normalise(query).trim();
   if (!q) return list;
 
-  const budget = parseBudget(query);
   const STOP = new Set(["under", "below", "upto", "up", "to", "gift", "gifts", "for", "the", "a", "rs", "inr", "my", "me"]);
   const tokens = q.split(/\s+/).filter((t) => t.length > 1 && !STOP.has(t) && !/^₹?\d+(\.\d+)?k?$/.test(t));
 
@@ -143,15 +131,6 @@ export function searchProducts<T extends Searchable>(list: T[], query: string): 
     })
     .filter((x) => (tokens.length ? x.score > 0 : true));
 
-  let results = scored;
-  if (budget) results = results.filter((x) => productPriceValue(x.p) <= budget);
-
-  return results
-    .sort((a, b) =>
-      budget && !tokens.length
-        ? productPriceValue(b.p) - productPriceValue(a.p) // closest to budget first
-        : b.score - a.score)
-    .map((x) => x.p);
+  return scored.sort((a, b) => b.score - a.score).map((x) => x.p);
 }
 
-export { priceBands };

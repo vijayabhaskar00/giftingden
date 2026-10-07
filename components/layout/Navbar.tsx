@@ -62,7 +62,7 @@ export default function Navbar() {
             </button>
             <div className="hidden xl:block">
               <WhatsAppButton
-                message={createCorporateWhatsAppMessage()} label="Get a Corporate Quote" size="sm" source="navbar" extraEvent="corporate_enquiry"
+                message={createCorporateWhatsAppMessage({ occasion: "Diwali gifting" })} label="Get a Diwali Quote" size="sm" source="navbar" extraEvent="corporate_enquiry"
                 className="!px-4" ariaLabel="Get a corporate quote on WhatsApp (opens in a new tab)"
               />
             </div>
@@ -97,7 +97,7 @@ export default function Navbar() {
               ))}
             </ul>
             <div className="mt-auto pt-8">
-              <WhatsAppButton message={createCorporateWhatsAppMessage()} label="Get a Corporate Quote" size="lg" source="mobile_menu" extraEvent="corporate_enquiry" className="w-full" />
+              <WhatsAppButton message={createCorporateWhatsAppMessage({ occasion: "Diwali gifting" })} label="Get a Diwali Quote" size="lg" source="mobile_menu" extraEvent="corporate_enquiry" className="w-full" />
             </div>
           </nav>
         </div>

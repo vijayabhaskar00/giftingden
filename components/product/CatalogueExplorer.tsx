@@ -5,14 +5,14 @@ import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { X } from "lucide-react";
 import EmptyState from "@/components/ui/EmptyState";
 import { filterProducts, sortProducts, type Filters, type SortKey } from "@/lib/catalogue";
-import { getCategory, getOccasion, getPriceBand, getRecipient, getStyle } from "@/lib/data/taxonomy";
+import { getCategory, getOccasion, getRecipient, getStyle } from "@/lib/data/taxonomy";
 import { trackEvent } from "@/lib/analytics";
 import type { Product } from "@/lib/types";
 import FilterBar from "./FilterBar";
 import ProductGrid from "./ProductGrid";
 
-const SORT_KEYS: SortKey[] = ["featured", "price-asc", "price-desc", "newest"];
-const FILTER_KEYS = ["category", "occasion", "recipient", "price", "style"] as const;
+const SORT_KEYS: SortKey[] = ["featured", "newest"];
+const FILTER_KEYS = ["category", "occasion", "recipient", "style"] as const;
 
 function parse(sp: URLSearchParams): { filters: Filters; sort: SortKey } {
   const s = sp.get("sort") as SortKey | null;
@@ -21,7 +21,7 @@ function parse(sp: URLSearchParams): { filters: Filters; sort: SortKey } {
     filters: {
       q: sp.get("q")?.slice(0, 80) || undefined,
       category: sp.get("category") || undefined, occasion: sp.get("occasion") || undefined,
-      recipient: sp.get("recipient") || undefined, price: sp.get("price") || undefined, style: sp.get("style") || undefined,
+      recipient: sp.get("recipient") || undefined, style: sp.get("style") || undefined,
       customisable: sp.get("customisable") === "1" || undefined, bestseller: sp.get("bestseller") === "1" || undefined,
     },
   };
@@ -69,7 +69,6 @@ export default function CatalogueExplorer({ products }: { products: Product[] })
     filters.category && { key: "category", label: getCategory(filters.category)?.name ?? filters.category },
     filters.occasion && { key: "occasion", label: getOccasion(filters.occasion)?.name ?? filters.occasion },
     filters.recipient && { key: "recipient", label: getRecipient(filters.recipient)?.name ?? filters.recipient },
-    filters.price && { key: "price", label: getPriceBand(filters.price)?.name ?? filters.price },
     filters.style && { key: "style", label: getStyle(filters.style)?.name ?? filters.style },
     filters.customisable && { key: "customisable", label: "Customisable" },
     filters.bestseller && { key: "bestseller", label: "Bestseller" },

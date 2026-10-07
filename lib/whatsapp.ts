@@ -1,4 +1,3 @@
-import { priceLabel } from "./format";
 import { absoluteUrl, site } from "./site";
 import type { FinderAnswers, Product } from "./types";
 
@@ -14,7 +13,7 @@ export function createWhatsAppUrl(message?: string, phone: string = site.whatsap
 }
 
 export function createGeneralWhatsAppMessage(): string {
-  return "Hi Gifthut! I'm looking for corporate gifting options. Could you help me choose?";
+  return "Hi Gifthut! I'm looking for Diwali corporate gifting options. Could you help me choose?";
 }
 
 export function createProductWhatsAppMessage(product: Product, opts: { customisation?: boolean } = {}): string {
@@ -23,7 +22,6 @@ export function createProductWhatsAppMessage(product: Product, opts: { customisa
     "Hi Gifthut! I'm interested in corporate gifting with the following hamper:",
     `Product: ${product.name}`,
     `Product ID: ${product.sku}`,
-    `Price: ${priceLabel(product)}`,
     `Link: ${absoluteUrl(`/gift/${product.slug}`)}`,
     "",
     opts.customisation

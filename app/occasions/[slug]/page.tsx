@@ -19,7 +19,7 @@ const headlines: Record<string, string> = {
   onboarding: "Make day one feel expected.",
   appreciation: "Recognition people actually remember.",
   "client-gifting": "Strengthen relationships with a considered gift.",
-  festive: "Festive gifting, delivered on schedule.",
+  festive: "Diwali gifting, delivered before the festival.",
   "new-year": "Close the year with gratitude.",
   milestones: "Mark every anniversary, promotion and win.",
   events: "Delegate gifts people carry home.",

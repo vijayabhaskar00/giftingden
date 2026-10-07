@@ -6,7 +6,7 @@ import GiftArt from "@/components/art/GiftArt";
 import { photoUrl } from "@/lib/photos";
 import type { ArtSpec } from "@/lib/types";
 
-const HERO_ART: ArtSpec = { tone: "charcoal", box: "champagne", items: ["notebook", "mug", "tin", "card"], photo: photoUrl("corporate-stack") };
+const HERO_ART: ArtSpec = { tone: "cocoa", box: "champagne", items: ["tin", "jar", "candle", "card"], photo: photoUrl("diwali-kraft") };
 
 /** Layered, parallax hero still-life in an arch frame. Layers drift at different speeds on scroll. */
 export default function HeroVisual() {
@@ -20,7 +20,7 @@ export default function HeroVisual() {
     <div ref={ref} className="relative mx-auto w-full max-w-[34rem] lg:max-w-none">
       <div className="relative aspect-[4/5] overflow-hidden rounded-b-md rounded-t-full bg-rose-soft sm:aspect-[5/6] lg:aspect-[4/5]">
         <motion.div style={{ y: yBack }} className="absolute inset-x-0 -inset-y-[6%]">
-          <GiftArt art={HERO_ART} alt="A stack of charcoal corporate gift hampers tied with champagne ribbon" priority />
+          <GiftArt art={HERO_ART} alt="A Happy Diwali gift box filled with dry fruits, mithai, chocolates, brass diyas and hand-painted figurines" priority />
         </motion.div>
         <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/25 to-transparent" />
       </div>
@@ -28,7 +28,7 @@ export default function HeroVisual() {
       {/* floating secondary frame */}
       <motion.div style={{ y: yCard }} className="absolute -bottom-6 -left-3 w-[34%] md:-left-8 lg:-left-14">
         <div className="animate-float relative aspect-[4/5] overflow-hidden rounded-md border-[6px] border-background shadow-[0_18px_40px_rgb(42_37_34/0.18)]">
-          <GiftArt art={{ tone: "sage", box: "ivory", items: ["soap", "candle", "tin", "flowers"], photo: photoUrl("corporate-flat") }} variant="flatlay" alt="Flat lay of an executive corporate hamper" />
+          <GiftArt art={{ tone: "sage", box: "ivory", items: ["soap", "candle", "tin", "flowers"], photo: photoUrl("diwali-white") }} variant="flatlay" alt="A white and gold Diwali gift box with brass diyas and a floral ribbon" />
         </div>
       </motion.div>
 
@@ -37,7 +37,7 @@ export default function HeroVisual() {
         <svg viewBox="0 0 120 120" className="animate-spin-slow h-full w-full text-foreground">
           <defs><path id="seal" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" /></defs>
           <circle cx="60" cy="60" r="58" fill="#faf6ef" stroke="currentColor" strokeOpacity=".2" />
-          <text fontSize="10" fill="currentColor" fontWeight="700"><textPath href="#seal" textLength="270" lengthAdjust="spacing">BRANDED · PACKED · DELIVERED · </textPath></text>
+          <text fontSize="10" fill="currentColor" fontWeight="700"><textPath href="#seal" textLength="270" lengthAdjust="spacing">DIWALI · BRANDED · DELIVERED · </textPath></text>
         </svg>
         <svg viewBox="0 0 24 24" className="absolute h-6 w-6 text-accent" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.2 3.3 5 6.4 5c2 0 3.5 1.2 5.6 3.3C14.100 6.200 15.600 5 17.600 5c3.100 0 5.200 3.200 3.900 6.800C19.500 16.400 12 21 12 21Z" /></svg>
       </div>

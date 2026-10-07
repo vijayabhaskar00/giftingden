@@ -1,14 +1,14 @@
 import { photoUrl, type PhotoKey } from "../photos";
 import type {
-  ArtSpec, CategorySlug, OccasionSlug, PriceBandSlug, RecipientSlug, StyleSlug, Taxon,
+  ArtSpec, CategorySlug, OccasionSlug, RecipientSlug, StyleSlug, Taxon,
 } from "../types";
 
 type T<S extends string> = Taxon & { slug: S };
 
 export const categories: T<CategorySlug>[] = [
+  { slug: "festive-hampers", name: "Diwali & Festive", description: "Diwali hampers for clients and teams, at scale." },
   { slug: "corporate-hampers", name: "Corporate Hampers", description: "Considered hampers for teams and clients." },
   { slug: "new-employee-kits", name: "Onboarding Kits", description: "A first-day welcome new joiners keep." },
-  { slug: "festive-hampers", name: "Festive Gifting", description: "Diwali and year-end hampers, at scale." },
   { slug: "luxury-hampers", name: "Executive & Premium", description: "Statement gifts for leaders and key accounts." },
   { slug: "thank-you-boxes", name: "Appreciation Gifts", description: "Thank clients, partners and teams properly." },
   { slug: "birthday-boxes", name: "Milestones & Recognition", description: "Work anniversaries, promotions and wins." },
@@ -17,10 +17,10 @@ export const categories: T<CategorySlug>[] = [
 ];
 
 export const occasions: T<OccasionSlug>[] = [
+  { slug: "festive", name: "Diwali & Festive Gifting", emoji: "🪔", description: "Diwali hampers, branded and delivered on schedule." },
   { slug: "onboarding", name: "Employee Onboarding", emoji: "👋", description: "Make day one feel expected." },
   { slug: "appreciation", name: "Employee Appreciation", emoji: "🌟", description: "Recognition people actually remember." },
   { slug: "client-gifting", name: "Client Gifting", emoji: "🤝", description: "Strengthen relationships with a considered gift." },
-  { slug: "festive", name: "Festive Gifting", emoji: "🪔", description: "Diwali and festival hampers, delivered on schedule." },
   { slug: "new-year", name: "New Year & Year-End", emoji: "🎆", description: "Close the year with gratitude." },
   { slug: "milestones", name: "Milestones & Recognition", emoji: "🏆", description: "Work anniversaries, promotions and big wins." },
   { slug: "events", name: "Events & Conferences", emoji: "🎤", description: "Delegate kits and speaker gifts people keep." },
@@ -44,14 +44,6 @@ export const styles: T<StyleSlug>[] = [
   { slug: "wellness", name: "Wellness", description: "Balance, in a box." },
   { slug: "food-treats", name: "Food & Treats", description: "Sweet, savoury and shareable." },
   { slug: "tech", name: "Desk & Tech", description: "Useful things for the workday." },
-];
-
-export const priceBands: (Taxon & { slug: PriceBandSlug; min: number; max: number })[] = [
-  { slug: "under-1000", name: "Under ₹1,000", description: "Giveaways and small gestures.", min: 0, max: 999 },
-  { slug: "1000-2000", name: "₹1,000 – ₹2,000", description: "Our most-ordered range.", min: 1000, max: 2000 },
-  { slug: "2000-3500", name: "₹2,000 – ₹3,500", description: "Generous team and client gifts.", min: 2001, max: 3500 },
-  { slug: "3500-6000", name: "₹3,500 – ₹6,000", description: "Premium client gifting.", min: 3501, max: 6000 },
-  { slug: "6000-plus", name: "₹6,000+", description: "Statement executive gifts.", min: 6001, max: Infinity },
 ];
 
 const ph = (art: ArtSpec, key: PhotoKey): ArtSpec => ({ ...art, photo: photoUrl(key) });
@@ -88,4 +80,3 @@ export const getCategory = (slug: string) => categories.find((c) => c.slug === s
 export const getOccasion = (slug: string) => occasions.find((o) => o.slug === slug);
 export const getRecipient = (slug: string) => recipients.find((r) => r.slug === slug);
 export const getStyle = (slug: string) => styles.find((s) => s.slug === slug);
-export const getPriceBand = (slug: string) => priceBands.find((b) => b.slug === slug);

@@ -11,7 +11,6 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import TrackView from "@/components/ui/TrackView";
 import { getAllProducts, getProductBySlug, getRelated } from "@/lib/catalogue";
 import { getCategory } from "@/lib/data/taxonomy";
-import { priceLabel } from "@/lib/format";
 import { buildMetadata, productLd } from "@/lib/seo";
 
 type Params = { slug: string };
@@ -21,7 +20,7 @@ export const generateStaticParams = () => getAllProducts().map((p) => ({ slug: p
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const p = getProductBySlug((await params).slug);
   if (!p) return {};
-  return buildMetadata({ title: `${p.name} | ${getCategory(p.category)?.name ?? "Gift"}`, description: `${p.shortDescription} ${priceLabel(p)}. Enquire on WhatsApp for availability and delivery.`, path: `/gift/${p.slug}` });
+  return buildMetadata({ title: `${p.name} | ${getCategory(p.category)?.name ?? "Gift"}`, description: `${p.shortDescription} Branded corporate hamper with bulk pricing. Get a quote on WhatsApp.`, path: `/gift/${p.slug}` });
 }
 
 export default async function ProductPage({ params }: { params: Promise<Params> }) {

@@ -24,7 +24,7 @@ export default function FloatingWhatsApp() {
       >
         <span className="grid h-14 w-14 place-items-center"><WhatsAppIcon className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" /></span>
         <span className="max-w-0 overflow-hidden whitespace-nowrap text-[0.8rem] font-semibold tracking-wide opacity-0 transition-all duration-300 group-hover:max-w-52 group-hover:pr-5 group-hover:opacity-100 group-focus-visible:max-w-52 group-focus-visible:pr-5 group-focus-visible:opacity-100">
-          Get a Corporate Quote
+          Get a Diwali Quote
         </span>
       </a>
 
@@ -35,7 +35,7 @@ export default function FloatingWhatsApp() {
             aria-label="Chat with Gifthut on WhatsApp (opens in a new tab)"
             className="t-button flex h-12 w-full items-center justify-center gap-2.5 rounded-sm bg-wa text-white active:bg-wa-dark"
           >
-            <WhatsAppIcon className="h-5 w-5" /> Get a Corporate Quote
+            <WhatsAppIcon className="h-5 w-5" /> Get a Diwali Quote
           </a>
         </div>
       )}

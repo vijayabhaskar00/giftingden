@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { OccasionCard } from "@/components/ui/CollectionCard";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { occasionArt, occasions, priceBands, recipients, styles } from "@/lib/data/taxonomy";
+import { occasionArt, occasions, recipients, styles } from "@/lib/data/taxonomy";
 import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 
@@ -32,8 +32,7 @@ export default function OccasionsPage() {
 
       <section aria-labelledby="collections" className="mt-24 md:mt-32">
         <h2 id="collections" className="t-h2">Browse by budget, audience and style</h2>
-        <div className="mt-10 grid gap-10 md:grid-cols-3">
-          <div><h3 className="t-eyebrow mb-4">By budget per gift</h3><ul className="flex flex-wrap gap-2">{priceBands.map((b) => <li key={b.slug}><Link className={chip} href={`/gifts?price=${b.slug}`}>{b.name}</Link></li>)}</ul></div>
+        <div className="mt-10 grid gap-10 md:grid-cols-2">
           <div><h3 className="t-eyebrow mb-4">By audience</h3><ul className="flex flex-wrap gap-2">{recipients.map((r) => <li key={r.slug}><Link className={chip} href={`/gifts?recipient=${r.slug}`}>{r.name}</Link></li>)}</ul></div>
           <div><h3 className="t-eyebrow mb-4">By style</h3><ul className="flex flex-wrap gap-2">{styles.map((s) => <li key={s.slug}><Link className={chip} href={`/gifts?style=${s.slug}`}>{s.name}</Link></li>)}</ul></div>
         </div>

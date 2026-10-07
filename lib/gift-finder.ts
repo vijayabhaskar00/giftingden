@@ -1,5 +1,5 @@
 import { getAllProducts } from "./catalogue";
-import { formatINR, productPriceValue } from "./format";
+import { productPriceValue } from "./format";
 import type { FinderAnswers, Product, Recommendation } from "./types";
 
 /* ---------- Questions (data-driven so copy / options are editable) ---------- */
@@ -56,7 +56,7 @@ export const ruleBasedRecommender: Recommender = (answers, catalogue) => {
       if (rec.some((r) => product.recipient.includes(r as never))) { score += 3; reasons.push(`Popular for ${answers.recipient?.toLowerCase()}`); }
       if (range) {
         const v = productPriceValue(product);
-        if (v >= range[0] && v <= range[1]) { score += 4; reasons.push(`Within your budget (${formatINR(v)} onwards)`); }
+        if (v >= range[0] && v <= range[1]) { score += 4; reasons.push("Fits your budget per gift"); }
         else if (v < range[0] && v >= range[0] * 0.6) score += 1;
         else if (v > range[1] && v <= range[1] * 1.25) score += 1;
         else score -= 3;

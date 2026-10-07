@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 import { createGeneralWhatsAppMessage, createWhatsAppUrl } from "@/lib/whatsapp";
 
 const cols = [
-  { title: "Gifting", links: [["Corporate Hampers", "/gifts"], ["Collections", "/gift-packages"], ["Occasions", "/occasions"], ["Gift Finder", "/gift-finder"], ["Custom Branding", "/custom-gifts"]] },
+  { title: "Gifting", links: [["Diwali Gifting", "/occasions/festive"], ["Corporate Hampers", "/gifts"], ["Collections", "/gift-packages"], ["Occasions", "/occasions"], ["Gift Finder", "/gift-finder"], ["Custom Branding", "/custom-gifts"]] },
   { title: "Company", links: [["Corporate Solutions", "/corporate-gifting"], ["About", "/about"], ["Contact", "/contact"], ["FAQ", "/faq"]] },
   { title: "Legal", links: [["Privacy Policy", "/privacy"], ["Terms", "/terms"], ["Shipping Policy", "/terms#shipping"], ["Cancellation Policy", "/terms#cancellation"]] },
 ] as const;

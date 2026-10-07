@@ -8,7 +8,7 @@ export const site = {
   name: "Gifthut",
   tagline: "Corporate Gifting, Beautifully Delivered.",
   description:
-    "Gifthut designs premium corporate gifts and branded hampers for employee onboarding, client gifting, Diwali and festive gifting, events and bulk orders across India. Get a quote on WhatsApp.",
+    "Gifthut designs branded Diwali hampers and premium corporate gifts for clients, employees and partners, with bulk orders, custom branding and delivery across India. Get a quote on WhatsApp.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://gifthut.in").replace(/\/$/, ""),
   /** Digits only, international format. Replace via NEXT_PUBLIC_WHATSAPP_NUMBER. */
   whatsappNumber: stripNonDigits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919030515380"),

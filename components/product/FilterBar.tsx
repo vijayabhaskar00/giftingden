@@ -2,13 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Search, SlidersHorizontal, X } from "lucide-react";
-import { categories, occasions, priceBands, recipients, styles } from "@/lib/data/taxonomy";
+import { categories, occasions, recipients, styles } from "@/lib/data/taxonomy";
 import type { Filters, SortKey } from "@/lib/catalogue";
 
 export const SORTS: { value: SortKey; label: string }[] = [
   { value: "featured", label: "Featured" },
-  { value: "price-asc", label: "Price: low to high" },
-  { value: "price-desc", label: "Price: high to low" },
   { value: "newest", label: "Newest" },
 ];
 
@@ -56,7 +54,6 @@ function FilterFields({ filters, onChange, idp }: { filters: Filters; onChange: 
       <Select id={`${idp}-cat`} label="Category" value={filters.category} options={opts(categories)} onChange={(v) => onChange({ category: v || undefined })} />
       <Select id={`${idp}-occ`} label="Occasion" value={filters.occasion} options={opts(occasions)} onChange={(v) => onChange({ occasion: v || undefined })} />
       <Select id={`${idp}-rec`} label="Recipient" value={filters.recipient} options={opts(recipients)} onChange={(v) => onChange({ recipient: v || undefined })} />
-      <Select id={`${idp}-price`} label="Price" value={filters.price} options={opts(priceBands)} onChange={(v) => onChange({ price: v || undefined })} />
       <Select id={`${idp}-style`} label="Style" value={filters.style} options={opts(styles)} onChange={(v) => onChange({ style: v || undefined })} />
     </>
   );
@@ -65,7 +62,7 @@ function FilterFields({ filters, onChange, idp }: { filters: Filters; onChange: 
 export default function FilterBar({ filters, sort, qText, resultCount, onQuery, onChange, onSort, onClear }: Props) {
   const [sheet, setSheet] = useState(false);
   const sheetRef = useRef<HTMLDivElement>(null);
-  const activeCount = (["category", "occasion", "recipient", "price", "style"] as const).filter((k) => filters[k]).length + Number(!!filters.customisable) + Number(!!filters.bestseller);
+  const activeCount = (["category", "occasion", "recipient", "style"] as const).filter((k) => filters[k]).length + Number(!!filters.customisable) + Number(!!filters.bestseller);
 
   useEffect(() => {
     if (!sheet) return;
@@ -103,7 +100,7 @@ export default function FilterBar({ filters, sort, qText, resultCount, onQuery, 
       </div>
 
       {/* Desktop filters */}
-      <div className="mt-4 hidden grid-cols-5 gap-3 lg:grid">
+      <div className="mt-4 hidden grid-cols-4 gap-3 lg:grid">
         <FilterFields filters={filters} onChange={onChange} idp="d" />
       </div>
       <div className="mt-3 hidden flex-wrap items-center gap-3 lg:flex">

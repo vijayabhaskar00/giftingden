@@ -10,12 +10,13 @@ export const reviews: Review[] = [
 ];
 
 export const faqs: Faq[] = [
+  { question: "When should we order Diwali hampers?", answer: "Ideally 3–4 weeks before Diwali. Branded hampers need a mock-up approval and 7–10 working days of production, plus delivery time. Ready-to-ship hampers can be sent sooner, subject to stock." },
   { question: "What is the minimum order quantity?", answer: "Branded and customised hampers start at 25 units. Ready-to-ship hampers can be ordered in smaller quantities. Share your count on WhatsApp and we'll confirm." },
   { question: "Can you add our logo and branding?", answer: "Yes. We can brand the box, sleeve, message card and select products with your logo and colours. We share a mock-up for approval before production." },
   { question: "How do I place a corporate order?", answer: "Tap 'Talk to Our Corporate Gifting Team' or fill the enquiry form. We'll reply on WhatsApp with options, a quote and a mock-up. There's no online checkout." },
   { question: "Do you deliver across India, to multiple addresses?", answer: "Yes. We deliver to most pin codes across India, to a single address or to many. Share a spreadsheet of addresses and we'll handle dispatch and tracking." },
   { question: "How much lead time do you need?", answer: "Ready hampers usually ship in 3–5 working days. Branded and bulk orders typically need 7–10 working days. For Diwali and year-end, we recommend ordering 3–4 weeks ahead." },
-  { question: "Can you work within our budget per gift?", answer: "Yes. Tell us your per-gift budget and we'll build or adjust a hamper to fit it, from under ₹1,000 giveaways to ₹6,000+ executive gifts." },
+  { question: "Can you work within our budget per gift?", answer: "Yes. Tell us your per-gift budget and we'll build or adjust a hamper to fit it, from compact giveaways to premium executive gifts." },
   { question: "Can each hamper carry a personalised message or name?", answer: "Yes. We can print your message on every card, or add individual recipient names. Send the list and we'll match them to each hamper." },
   { question: "Do you provide GST invoices?", answer: "Yes. Share your company name and GSTIN when you confirm the order and we'll issue a GST invoice." },
   { question: "How do I contact Gifthut?", answer: "WhatsApp is the fastest way and our team replies during business hours. You can also email us or message us on Instagram." },
@@ -62,7 +63,7 @@ export const corporateProcess = [
 
 export const customSteps = [
   { title: "Share your brief", text: "Occasion, audience, quantity and the feeling you want to create." },
-  { title: "Set a budget per gift", text: "From ₹449 giveaways to ₹7,999+ executive hampers." },
+  { title: "Set a budget per gift", text: "From compact giveaways to premium executive hampers." },
   { title: "Choose the products", text: "Pick from our curated range or let us recommend what suits your people." },
   { title: "Add your branding", text: "Logo, brand colours and a message in your own words." },
   { title: "Approve a mock-up", text: "See the box, sleeve and card before anything goes into production." },

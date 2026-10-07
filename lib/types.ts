@@ -42,8 +42,6 @@ export type RecipientSlug = "clients" | "employees" | "teams" | "leadership" | "
 
 export type StyleSlug = "premium" | "minimal" | "festive" | "branded" | "wellness" | "food-treats" | "tech";
 
-export type PriceBandSlug = "under-1000" | "1000-2000" | "2000-3500" | "3500-6000" | "6000-plus";
-
 export interface Product {
   id: string;
   name: string;

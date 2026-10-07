@@ -8,7 +8,6 @@ import Media from "@/components/ui/Media";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
 import { searchProducts } from "@/lib/catalogue";
 import { categories, occasions } from "@/lib/data/taxonomy";
-import { priceLabel } from "@/lib/format";
 import { getSuggestions, popularSearches } from "@/lib/search-suggest";
 import { trackEvent } from "@/lib/analytics";
 import type { SearchDoc } from "./types";
@@ -85,7 +84,7 @@ export default function SearchOverlay({ docs, onClose }: { docs: SearchDoc[]; on
               <ul className="flex flex-wrap gap-2">
                 {popularSearches.map((s) => (
                   <li key={s}>
-                    <button type="button" onClick={() => submit(s.replace("Under ₹", ""))} className="rounded-full border border-border px-4 py-2 text-sm transition-colors hover:border-foreground hover:bg-beige">{s}</button>
+                    <button type="button" onClick={() => submit(s)} className="rounded-full border border-border px-4 py-2 text-sm transition-colors hover:border-foreground hover:bg-beige">{s}</button>
                   </li>
                 ))}
               </ul>
@@ -132,7 +131,6 @@ export default function SearchOverlay({ docs, onClose }: { docs: SearchDoc[]; on
                         <span className="block truncate font-display text-lg font-semibold leading-tight">{p.name}</span>
                         <span className="block truncate text-xs text-muted">{p.shortDescription}</span>
                       </span>
-                      <span className="shrink-0 text-sm font-semibold">{priceLabel(p)}</span>
                     </Link>
                   </li>
                 ))}

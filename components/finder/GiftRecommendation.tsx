@@ -2,7 +2,6 @@ import Link from "next/link";
 import Media from "@/components/ui/Media";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
 import { buttonClasses } from "@/components/ui/Button";
-import { priceLabel } from "@/lib/format";
 import { createProductWhatsAppMessage } from "@/lib/whatsapp";
 import type { Recommendation } from "@/lib/types";
 
@@ -14,7 +13,6 @@ export default function GiftRecommendation({ rec }: { rec: Recommendation }) {
         <Media image={p.images[0]} sizes="(min-width:768px) 30vw, 90vw" className="transition-transform duration-700 hover:scale-[1.04]" />
       </Link>
       <h4 className="t-h3 mt-4">{p.name}</h4>
-      <p className="mt-1 text-sm font-semibold">{priceLabel(p)}</p>
       {reasons.length > 0 && (
         <ul className="t-caption mt-2 space-y-0.5">{reasons.slice(0, 2).map((r) => <li key={r}>· {r}</li>)}</ul>
       )}

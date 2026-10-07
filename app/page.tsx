@@ -15,23 +15,40 @@ import TestimonialSection from "@/components/sections/TestimonialSection";
 import { LinkButton } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { getFeatured } from "@/lib/catalogue";
+import { getAllProducts, getFeatured } from "@/lib/catalogue";
 import { faqs } from "@/lib/data/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Gifthut | Corporate Gifting & Branded Hampers in India",
-  description: "Premium corporate gifts and branded hampers for employee onboarding, client gifting, Diwali and events. Bulk orders from 25, custom branding, delivery across India. Get a quote on WhatsApp.",
+  title: "Gifthut | Diwali Corporate Gifting & Branded Hampers in India",
+  description: "Branded Diwali hampers and premium corporate gifts for clients, employees and partners. Bulk orders from 25, your logo on every box, delivery across India. Get a Diwali quote on WhatsApp.",
   path: "/",
 });
 
 export default function HomePage() {
-  const featured = getFeatured(8);
+  const diwali = getAllProducts().filter((p) => p.category === "festive-hampers");
+  const yearRound = getFeatured(12).filter((p) => !p.occasion.includes("festive")).slice(0, 4);
 
   return (
     <>
       <Hero />
       <CapabilityStrip />
+
+      <section aria-labelledby="diwali-title" className="section-y bg-beige/50">
+        <div className="container-page">
+          <Reveal>
+            <SectionHeader
+              eyebrow="Diwali 2026 hampers"
+              title={<span id="diwali-title">Diwali hampers, ready to brand.</span>}
+              subtitle="Mithai, dry fruits, diyas and keepsakes for clients, teams and partners. Every hamper can carry your logo, your message and your packaging."
+              action={<LinkButton href="/occasions/festive" variant="outline">All Diwali Hampers</LinkButton>}
+            />
+          </Reveal>
+          <Reveal className="mt-12 md:mt-16"><ProductGrid products={diwali} columns={3} priorityCount={3} /></Reveal>
+        </div>
+      </section>
+
+      <FestiveBanner />
       <StatementSection />
       <OccasionRail />
 
@@ -39,18 +56,17 @@ export default function HomePage() {
         <div className="container-page">
           <Reveal>
             <SectionHeader
-              eyebrow="Corporate hampers"
-              title={<span id="featured-title">Ready to brand. Ready to send.</span>}
-              subtitle="Our most-ordered hampers for teams and clients. Every one can carry your logo, your message and your packaging."
+              eyebrow="Year-round corporate gifting"
+              title={<span id="featured-title">Beyond Diwali.</span>}
+              subtitle="Onboarding, client and executive hampers for every other moment of the business year."
               action={<LinkButton href="/gifts" variant="outline">View All Hampers</LinkButton>}
             />
           </Reveal>
-          <Reveal className="mt-12 md:mt-16"><ProductGrid products={featured} priorityCount={2} /></Reveal>
+          <Reveal className="mt-12 md:mt-16"><ProductGrid products={yearRound} /></Reveal>
         </div>
       </section>
 
       <CustomGiftingSection />
-      <FestiveBanner />
       <ProcessSection tone="none" />
 
       <section aria-labelledby="finder-heading" className="section-y bg-beige/50">

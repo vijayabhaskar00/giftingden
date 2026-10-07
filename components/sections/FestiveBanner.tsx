@@ -10,12 +10,12 @@ export default function FestiveBanner() {
     <section aria-labelledby="festive-title" className="on-dark my-6 bg-foreground text-background md:my-10">
       <div className="container-page grid items-center gap-10 py-16 md:py-24 lg:grid-cols-12">
         <Reveal className="lg:col-span-6">
-          <p className="t-eyebrow !text-champagne mb-5">Festive season gifting</p>
-          <h2 id="festive-title" className="t-h1">Diwali Hampers for Clients and Teams.</h2>
-          <p className="mt-6 max-w-lg text-lg text-background/75">Mithai, dry fruits, diyas and keepsakes, branded with your logo and delivered to one address or many. Order 3–4 weeks ahead for the best choice and delivery dates.</p>
+          <p className="t-eyebrow !text-champagne mb-5">Diwali is around the corner</p>
+          <h2 id="festive-title" className="t-h1">Order Diwali Hampers Early.</h2>
+          <p className="mt-6 max-w-lg text-lg text-background/75">Branded hampers need a mock-up and production time. Confirm 3–4 weeks ahead for the best choice, your delivery dates and one address or many.</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <WhatsAppButton message={createCorporateWhatsAppMessage({ occasion: "Festive gifting" })} label="Get a Diwali Quote" size="lg" source="festive_banner" extraEvent="corporate_enquiry" />
-            <LinkButton href="/occasions/festive" variant="light" size="lg">See Festive Hampers</LinkButton>
+            <WhatsAppButton message={createCorporateWhatsAppMessage({ occasion: "Diwali gifting" })} label="Get a Diwali Quote" size="lg" source="festive_banner" extraEvent="corporate_enquiry" />
+            <LinkButton href="/occasions/festive" variant="light" size="lg">See All Diwali Hampers</LinkButton>
           </div>
         </Reveal>
         <Reveal delay={100} className="lg:col-span-6">

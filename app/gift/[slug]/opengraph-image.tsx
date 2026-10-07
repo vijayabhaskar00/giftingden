@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { notFound } from "next/navigation";
 import { getAllProducts, getProductBySlug } from "@/lib/catalogue";
-import { priceLabel } from "@/lib/format";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -20,7 +19,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           <div style={{ fontSize: 92, lineHeight: 1.05 }}>{p.name}</div>
           <div style={{ fontSize: 34, marginTop: 24, color: "#6b6159" }}>{p.shortDescription}</div>
         </div>
-        <div style={{ fontSize: 34 }}>{`${priceLabel(p)} · Enquire on WhatsApp`}</div>
+        <div style={{ fontSize: 34 }}>Get a quote on WhatsApp</div>
       </div>
     ),
     size,

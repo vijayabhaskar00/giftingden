@@ -2,7 +2,6 @@ import { Check, Clock, Truck } from "lucide-react";
 import Link from "next/link";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
 import { getCategory, getOccasion } from "@/lib/data/taxonomy";
-import { formatINR } from "@/lib/format";
 import { createProductWhatsAppMessage } from "@/lib/whatsapp";
 import type { Product } from "@/lib/types";
 
@@ -21,12 +20,9 @@ export default function ProductDetails({ product: p }: { product: Product }) {
       <h1 className="t-h1 mt-4 !text-[clamp(2.4rem,5vw,3.6rem)]">{p.name}</h1>
       <p className="mt-5 text-lg leading-relaxed text-muted">{p.description}</p>
 
-      <div className="mt-7 flex items-baseline gap-3 border-y border-border py-5">
-        <p className="font-display text-4xl font-semibold">
-          {p.price != null ? formatINR(p.price) : p.startingPrice != null ? formatINR(p.startingPrice) : "Price on request"}
-          {p.price == null && p.startingPrice != null && <span className="ml-2 font-sans text-sm font-semibold uppercase tracking-[0.12em] text-muted">onwards</span>}
-        </p>
-        <p className="t-caption">Per-hamper price. Bulk pricing and final quote confirmed on WhatsApp.</p>
+      <div className="mt-7 border-y border-border py-5">
+        <p className="font-display text-3xl font-semibold">Bulk pricing on request</p>
+        <p className="t-caption mt-1">Pricing depends on quantity, branding and delivery. Tell us your numbers on WhatsApp and we&apos;ll send a quote and mock-up.</p>
       </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
