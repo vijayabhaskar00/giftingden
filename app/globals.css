@@ -49,7 +49,7 @@ img, svg { max-width: 100%; }
 .on-dark :focus-visible { outline-color: var(--color-background); }
 
 /* ---------- Typography scale ---------- */
-@utility t-display { font-family: var(--font-display); font-weight: 500; line-height: 0.98; letter-spacing: -0.015em; font-size: clamp(3.5rem, 8.5vw, 7rem); }
+@utility t-display { font-family: var(--font-display); font-weight: 500; line-height: 0.98; letter-spacing: -0.015em; font-size: clamp(3.3rem, 6.2vw, 5rem); }
 @utility t-h1 { font-family: var(--font-display); font-weight: 500; line-height: 1.02; letter-spacing: -0.012em; font-size: clamp(2.5rem, 6vw, 4.75rem); }
 @utility t-h2 { font-family: var(--font-display); font-weight: 500; line-height: 1.08; letter-spacing: -0.01em; font-size: clamp(2rem, 4.2vw, 3.5rem); }
 @utility t-h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; font-size: clamp(1.35rem, 2vw, 1.65rem); }

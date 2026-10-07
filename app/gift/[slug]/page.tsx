@@ -34,7 +34,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
       <JsonLd data={productLd(p)} />
       <TrackView event="product_view" props={{ productId: p.sku, productName: p.name, category: p.category, occasion: p.occasion[0] }} />
       <div className="container-page pb-28 pt-5 lg:pb-24">
-        <Breadcrumbs items={[{ name: "Shop Gifts", path: "/gifts" }, { name: p.name, path: `/gift/${p.slug}` }]} className="mb-6" />
+        <Breadcrumbs items={[{ name: "Corporate Hampers", path: "/gifts" }, { name: p.name, path: `/gift/${p.slug}` }]} className="mb-6" />
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="-mx-5 sm:mx-0 lg:col-span-7"><div className="lg:sticky lg:top-28"><ProductGallery images={p.gallery} name={p.name} /></div></div>
           <div className="lg:col-span-5"><ProductDetails product={p} /></div>

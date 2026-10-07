@@ -16,22 +16,20 @@ type Params = { slug: string };
 export const generateStaticParams = () => occasions.map((o) => ({ slug: o.slug }));
 
 const headlines: Record<string, string> = {
-  birthday: "Make their day unforgettable.",
-  anniversary: "Honour the years, big and small.",
-  wedding: "For the biggest day, and the people beside it.",
-  congratulations: "For wins worth celebrating out loud.",
-  valentines: "Say it with something they can hold.",
-  festive: "Warmth and sparkle, for every festival.",
-  corporate: "Gifting that reflects well on your brand.",
-  "thank-you": "Because thanks deserves a little more.",
-  "new-beginnings": "A gentle gift for a fresh start.",
-  "just-because": "No reason needed. That's the point.",
+  onboarding: "Make day one feel expected.",
+  appreciation: "Recognition people actually remember.",
+  "client-gifting": "Strengthen relationships with a considered gift.",
+  festive: "Festive gifting, delivered on schedule.",
+  "new-year": "Close the year with gratitude.",
+  milestones: "Mark every anniversary, promotion and win.",
+  events: "Delegate gifts people carry home.",
+  "thank-you": "Thank partners and vendors properly.",
 };
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const o = getOccasion((await params).slug);
   if (!o) return {};
-  return buildMetadata({ title: `${o.name} Gifts | Curated Gift Boxes & Hampers`, description: `${o.description} Shop thoughtful ${o.name.toLowerCase()} gift boxes and hampers, delivered across India. Enquire on WhatsApp.`, path: `/occasions/${o.slug}` });
+  return buildMetadata({ title: `${o.name} | Corporate Gifting & Branded Hampers`, description: `${o.description} Branded ${o.name.toLowerCase()} hampers with bulk pricing, delivered across India. Get a quote on WhatsApp.`, path: `/occasions/${o.slug}` });
 }
 
 export default async function OccasionPage({ params }: { params: Promise<Params> }) {
@@ -47,10 +45,12 @@ export default async function OccasionPage({ params }: { params: Promise<Params>
             <Breadcrumbs items={[{ name: "Occasions", path: "/occasions" }, { name: o.name, path: `/occasions/${o.slug}` }]} />
             <p className="t-eyebrow mb-5 mt-8">{o.emoji} {o.name}</p>
             <h1 className="t-h1">{headlines[o.slug] ?? o.description}</h1>
-            <p className="t-lead mt-6 max-w-lg">{o.description} Every gift below can be personalised with a handwritten note.</p>
+            <p className="t-lead mt-6 max-w-lg">{o.description} Every hamper below can carry your logo and a custom message, with bulk pricing from 25.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <LinkButton href="#gifts" size="lg">See {products.length} gifts</LinkButton>
-              <WhatsAppButton message={`Hi Gifthut! I'm looking for a ${sanitizeText(o.name, 40).toLowerCase()} gift. Could you help me choose?`} label="Ask a Gifting Expert" variant="outline" size="lg" source={`occasion_${o.slug}`} occasion={o.slug} />
+              <LinkButton href="#gifts" size="lg">See {products.length} hampers</LinkButton>
+              <WhatsAppButton message={`Hi Gifthut! I'm looking for corporate gifts for ${sanitizeText(o.name, 40).toLowerCase()}.
+Quantity: 
+Could you share options and bulk pricing?`} label="Get a Quote" variant="outline" size="lg" source={`occasion_${o.slug}`} occasion={o.slug} />
             </div>
           </div>
           <div className="lg:col-span-5">

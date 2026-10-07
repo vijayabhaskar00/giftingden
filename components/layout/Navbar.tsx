@@ -7,7 +7,7 @@ import { Menu, Search, X } from "lucide-react";
 import { Logo, WhatsAppIcon } from "@/components/ui/Icons";
 import { useSearch } from "@/components/search/SearchProvider";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
-import { createGeneralWhatsAppMessage, createWhatsAppUrl } from "@/lib/whatsapp";
+import { createCorporateWhatsAppMessage, createGeneralWhatsAppMessage, createWhatsAppUrl } from "@/lib/whatsapp";
 import { trackWhatsAppEnquiry } from "@/lib/whatsapp-client";
 import { primaryNav, secondaryNav } from "./nav-links";
 
@@ -62,8 +62,8 @@ export default function Navbar() {
             </button>
             <div className="hidden xl:block">
               <WhatsAppButton
-                message={createGeneralWhatsAppMessage()} label="Talk to a Gifting Expert" size="sm" source="navbar"
-                className="!px-4" ariaLabel="Talk to a Gifting Expert on WhatsApp (opens in a new tab)"
+                message={createCorporateWhatsAppMessage()} label="Get a Corporate Quote" size="sm" source="navbar" extraEvent="corporate_enquiry"
+                className="!px-4" ariaLabel="Get a corporate quote on WhatsApp (opens in a new tab)"
               />
             </div>
             <a href={waHref} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: "navbar_icon" })}
@@ -97,7 +97,7 @@ export default function Navbar() {
               ))}
             </ul>
             <div className="mt-auto pt-8">
-              <WhatsAppButton message={createGeneralWhatsAppMessage()} label="Talk to a Gifting Expert" size="lg" source="mobile_menu" className="w-full" />
+              <WhatsAppButton message={createCorporateWhatsAppMessage()} label="Get a Corporate Quote" size="lg" source="mobile_menu" extraEvent="corporate_enquiry" className="w-full" />
             </div>
           </nav>
         </div>

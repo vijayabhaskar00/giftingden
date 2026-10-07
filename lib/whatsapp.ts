@@ -14,21 +14,21 @@ export function createWhatsAppUrl(message?: string, phone: string = site.whatsap
 }
 
 export function createGeneralWhatsAppMessage(): string {
-  return "Hi Gifthut! I'd love some help choosing a gift. Could you guide me?";
+  return "Hi Gifthut! I'm looking for corporate gifting options. Could you help me choose?";
 }
 
 export function createProductWhatsAppMessage(product: Product, opts: { customisation?: boolean } = {}): string {
   if (product.whatsappMessage && !opts.customisation) return product.whatsappMessage;
   const lines = [
-    "Hi Gifthut! I'm interested in the following gift:",
+    "Hi Gifthut! I'm interested in corporate gifting with the following hamper:",
     `Product: ${product.name}`,
     `Product ID: ${product.sku}`,
     `Price: ${priceLabel(product)}`,
     `Link: ${absoluteUrl(`/gift/${product.slug}`)}`,
     "",
     opts.customisation
-      ? "I'd like to know about customisation options (items, packaging, personal message)."
-      : "Please share availability, pricing and delivery details.",
+      ? "I'd like to know about branding options (logo, packaging, message card) and customisation."
+      : "Quantity needed: \nPlease share bulk pricing, branding options and delivery lead time.",
   ];
   return lines.join("\n");
 }
@@ -48,26 +48,27 @@ export function createCorporateWhatsAppMessage(d: CorporateDetails = {}): string
 }
 
 export interface CustomGiftDetails {
-  occasion?: string; budget?: string; recipient?: string; note?: string; packaging?: string; branding?: boolean;
+  company?: string; occasion?: string; budget?: string; quantity?: string; recipient?: string; note?: string; packaging?: string; branding?: boolean;
 }
 
 export function createCustomGiftWhatsAppMessage(d: CustomGiftDetails = {}): string {
   const rows = [
-    ["Occasion", d.occasion], ["Budget", d.budget], ["Gifting for", d.recipient],
-    ["Packaging", d.packaging], ["Personal note", d.note], ["Branding", d.branding ? "Yes, with logo" : undefined],
+    ["Company", d.company], ["Occasion", d.occasion], ["Budget per gift", d.budget], ["Quantity", d.quantity],
+    ["Gifting for", d.recipient], ["Packaging", d.packaging], ["Brief / message", d.note],
+    ["Branding", d.branding ? "Yes, with our logo" : undefined],
   ].filter(([, v]) => v && sanitizeText(String(v)));
-  const head = "Hi Gifthut, I'd like to create a customised gift package.";
+  const head = "Hi Gifthut, I'd like to create a branded, customised hamper for my company.";
   if (!rows.length) return head;
   return [head, "", ...rows.map(([k, v]) => `${k}: ${sanitizeText(String(v))}`)].join("\n");
 }
 
 export function createGiftFinderWhatsAppMessage(a: FinderAnswers, picks: Product[] = []): string {
   const lines = [
-    "Hi Gifthut! I used the Gift Finder and would love your help:",
-    a.recipient && `Gifting for: ${a.recipient}`,
+    "Hi Gifthut! I used the Corporate Gift Finder and would love your help:",
+    a.recipient && `Gifting: ${a.recipient}`,
     a.occasion && `Occasion: ${a.occasion}`,
-    a.budget && `Budget: ${a.budget}`,
-    a.personality && `Their personality: ${a.personality}`,
+    a.budget && `Budget per gift: ${a.budget}`,
+    a.quantity && `Quantity: ${a.quantity}`,
     picks.length ? `Shortlist: ${picks.map((p) => p.name).join(", ")}` : "",
   ].filter(Boolean) as string[];
   return lines.join("\n");

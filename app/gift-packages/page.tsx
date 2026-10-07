@@ -12,8 +12,8 @@ import { buildMetadata } from "@/lib/seo";
 import { createCustomGiftWhatsAppMessage } from "@/lib/whatsapp";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Gift Packages | Birthday, Corporate, Wedding & Luxury Hampers",
-  description: "Beautifully assembled gift boxes and hampers: birthday boxes, self-care, couple hampers, corporate, luxury, festive, bridesmaid and wedding gifts.",
+  title: "Corporate Gift Collections | Onboarding, Festive, Executive & Custom",
+  description: "Corporate gift collections: onboarding kits, festive and Diwali hampers, executive and premium gifts, appreciation and branded custom hampers.",
   path: "/gift-packages",
 });
 
@@ -21,8 +21,8 @@ export default function GiftPackagesPage() {
   const groups = categories.map((c) => ({ c, items: getByCategory(c.slug) })).filter((g) => g.items.length);
   return (
     <div className="container-page pb-20 pt-6 md:pb-28">
-      <Breadcrumbs items={[{ name: "Gift Packages", path: "/gift-packages" }]} />
-      <SectionHeader as="h1" className="mt-6 md:mt-8" eyebrow="Gift packages" title="Curated With Thought." subtitle="Beautifully assembled gift experiences for moments that matter. Every box is hand-packed and can be personalised." />
+      <Breadcrumbs items={[{ name: "Collections", path: "/gift-packages" }]} />
+      <SectionHeader as="h1" className="mt-6 md:mt-8" eyebrow="Collections" title="Curated for Business." subtitle="Onboarding kits, festive hampers, executive gifts and more. Every box is hand-packed and can carry your logo and message." />
 
       <nav aria-label="Jump to a category" className="no-scrollbar sticky top-16 z-30 -mx-5 mt-8 flex gap-2 overflow-x-auto border-b border-border bg-background/95 px-5 py-3 backdrop-blur md:top-20 md:mx-0 md:px-0">
         {groups.map(({ c }) => (
@@ -48,11 +48,11 @@ export default function GiftPackagesPage() {
       </div>
 
       <section aria-labelledby="own" className="mt-24 rounded-md bg-champagne/50 px-6 py-14 text-center md:mt-32 md:py-20">
-        <p className="t-eyebrow mb-4">Custom hampers</p>
-        <h2 id="own" className="t-h2">Don&apos;t see exactly what you need?</h2>
-        <p className="t-lead mx-auto mt-4 max-w-lg">Tell us who it&apos;s for and your budget. We&apos;ll design a hamper around them.</p>
+        <p className="t-eyebrow mb-4">Custom branding</p>
+        <h2 id="own" className="t-h2">Need something built around your brand?</h2>
+        <p className="t-lead mx-auto mt-4 max-w-lg">Share your audience, budget and quantity. We'll design a hamper and a mock-up around your brief.</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <WhatsAppButton message={createCustomGiftWhatsAppMessage()} label="Create My Gift" size="lg" source="packages_footer" extraEvent="custom_gift_enquiry" />
+          <WhatsAppButton message={createCustomGiftWhatsAppMessage()} label="Start a Custom Brief" size="lg" source="packages_footer" extraEvent="custom_gift_enquiry" />
           <LinkButton href="/gift-finder" variant="outline" size="lg">Try the Gift Finder</LinkButton>
         </div>
       </section>

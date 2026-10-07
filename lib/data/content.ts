@@ -1,37 +1,37 @@
 import type { ArtSpec, Faq, Review } from "../types";
 
-/** Sample testimonials. Replace with real customer reviews before launch. */
+/** Sample testimonials. Replace with real client feedback (with permission) before launch. */
 export const reviews: Review[] = [
-  { id: "r1", name: "Priya", city: "Bengaluru", rating: 5, occasion: "Birthday", quote: "Beautiful packaging and even better than expected. My sister cried a little, in the best way." },
-  { id: "r2", name: "Arjun", city: "Mumbai", rating: 5, occasion: "Anniversary", quote: "I had no idea what to get. They asked three questions on WhatsApp and put together something perfect." },
-  { id: "r3", name: "Meera", city: "Hyderabad", rating: 5, occasion: "Corporate", quote: "We sent 60 hampers to clients. Consistent, on time, and several people wrote back to thank us." },
-  { id: "r4", name: "Sana", city: "Delhi", rating: 5, occasion: "Wedding", quote: "The bridesmaid boxes were the highlight of my bridal shower. Every card had a name on it." },
-  { id: "r5", name: "Karthik", city: "Chennai", rating: 5, occasion: "Thank You", quote: "Felt personal, not shop-bought. My mentor still has the note on her desk." },
+  { id: "r1", name: "Meera", city: "Hyderabad", rating: 5, quote: "We sent 60 hampers to clients. Consistent, on time, and several people wrote back to thank us.", occasion: "Client gifting" },
+  { id: "r2", name: "Arjun", city: "Mumbai", rating: 5, quote: "Our new-joiner kits now arrive before day one. The branding and packaging were spot on.", occasion: "Onboarding" },
+  { id: "r3", name: "Priya", city: "Bengaluru", rating: 5, quote: "Diwali gifting for 200 people across five cities, handled without a single follow-up from our side.", occasion: "Festive gifting" },
+  { id: "r4", name: "Karthik", city: "Chennai", rating: 5, quote: "They asked three questions on WhatsApp, shared a mock-up the same day and stuck to our budget.", occasion: "Conference" },
+  { id: "r5", name: "Sana", city: "Delhi", rating: 5, quote: "Beautiful packaging, and the handwritten notes made it feel personal, not procured.", occasion: "Appreciation" },
 ];
 
 export const faqs: Faq[] = [
-  { question: "Do you deliver across India?", answer: "Yes. We deliver to most pin codes across India. Delivery time and charges depend on your location, so share your pin code on WhatsApp and we'll confirm straight away." },
-  { question: "How can I place an order?", answer: "Tap 'Enquire on WhatsApp' on any gift. We'll confirm availability, final pricing, delivery date and payment details in the chat. There's no cart or online checkout." },
-  { question: "Can I customise a gift package?", answer: "Absolutely. You can swap items, choose packaging, add a personalised message or build a hamper from scratch with our team. Start at our Custom Gifts page or message us directly." },
-  { question: "Can I add a personal message?", answer: "Yes. Every gift can carry a handwritten or printed message card. Just share your message and the recipient's name when you enquire." },
-  { question: "Do you offer corporate gifting?", answer: "Yes. We create employee onboarding kits, client hampers, festive gifts and event giveaways, with custom branding and packaging. Visit our Corporate Gifting page to get started." },
-  { question: "Do you accept bulk orders?", answer: "We do, from small team orders to several hundred hampers. Bulk orders benefit from tailored pricing and a sample for approval. Tell us your quantity and date on WhatsApp." },
-  { question: "How long does delivery take?", answer: "Most orders arrive within 3–5 working days. Express and same-day delivery can be arranged in select cities. Custom and bulk orders need a little more lead time." },
-  { question: "Can I request a specific budget?", answer: "Yes, and we encourage it. Tell us your budget and who the gift is for, and we'll recommend what works best within it." },
+  { question: "What is the minimum order quantity?", answer: "Branded and customised hampers start at 25 units. Ready-to-ship hampers can be ordered in smaller quantities. Share your count on WhatsApp and we'll confirm." },
+  { question: "Can you add our logo and branding?", answer: "Yes. We can brand the box, sleeve, message card and select products with your logo and colours. We share a mock-up for approval before production." },
+  { question: "How do I place a corporate order?", answer: "Tap 'Talk to Our Corporate Gifting Team' or fill the enquiry form. We'll reply on WhatsApp with options, a quote and a mock-up. There's no online checkout." },
+  { question: "Do you deliver across India, to multiple addresses?", answer: "Yes. We deliver to most pin codes across India, to a single address or to many. Share a spreadsheet of addresses and we'll handle dispatch and tracking." },
+  { question: "How much lead time do you need?", answer: "Ready hampers usually ship in 3–5 working days. Branded and bulk orders typically need 7–10 working days. For Diwali and year-end, we recommend ordering 3–4 weeks ahead." },
+  { question: "Can you work within our budget per gift?", answer: "Yes. Tell us your per-gift budget and we'll build or adjust a hamper to fit it, from under ₹1,000 giveaways to ₹6,000+ executive gifts." },
+  { question: "Can each hamper carry a personalised message or name?", answer: "Yes. We can print your message on every card, or add individual recipient names. Send the list and we'll match them to each hamper." },
+  { question: "Do you provide GST invoices?", answer: "Yes. Share your company name and GSTIN when you confirm the order and we'll issue a GST invoice." },
   { question: "How do I contact Gifthut?", answer: "WhatsApp is the fastest way and our team replies during business hours. You can also email us or message us on Instagram." },
 ];
 
 /** Moments grid. Placeholders until real UGC is linked. */
 export const instagramMoments: { alt: string; art: ArtSpec; variant: "box" | "flatlay" | "detail" | "wrapped" }[] = [
-  { alt: "A blush birthday box with ribbon", art: { tone: "blush", items: ["chocolates", "candle", "card"] }, variant: "box" },
-  { alt: "Flat lay of a self-care hamper", art: { tone: "sage", items: ["soap", "candle", "tin"] }, variant: "flatlay" },
+  { alt: "A recognition hamper with ribbon", art: { tone: "blush", items: ["chocolates", "candle", "card"] }, variant: "box" },
+  { alt: "Flat lay of a wellness hamper", art: { tone: "sage", items: ["soap", "candle", "tin"] }, variant: "flatlay" },
   { alt: "Close-up of a hand-poured candle", art: { tone: "champagne", items: ["candle", "flowers"] }, variant: "detail" },
   { alt: "Corporate hampers stacked and ready", art: { tone: "charcoal", items: ["notebook", "mug", "tin"] }, variant: "wrapped" },
-  { alt: "Rose-toned anniversary box", art: { tone: "rose", items: ["flowers", "chocolates", "candle"] }, variant: "box" },
+  { alt: "Work anniversary box", art: { tone: "rose", items: ["flowers", "chocolates", "candle"] }, variant: "box" },
   { alt: "Festive hamper with brass diyas", art: { tone: "cocoa", items: ["tin", "candle", "jar"] }, variant: "flatlay" },
   { alt: "Handwritten card detail", art: { tone: "ivory", items: ["card", "flowers"] }, variant: "detail" },
   { alt: "Signature Gifthut packaging", art: { tone: "ivory", box: "champagne", items: ["card", "soap"] }, variant: "wrapped" },
-  { alt: "Thank-you box with honey jar", art: { tone: "sage", items: ["jar", "tin", "card"] }, variant: "box" },
+  { alt: "Partner thank-you box with honey jar", art: { tone: "sage", items: ["jar", "tin", "card"] }, variant: "box" },
 ];
 
 export const corporateUseCases = [
@@ -61,17 +61,17 @@ export const corporateProcess = [
 ];
 
 export const customSteps = [
-  { title: "Choose the occasion", text: "Birthday, wedding, thank-you, or something only you know about." },
-  { title: "Set your budget", text: "From a ₹1,500 hamper to a ₹25,000 statement gift." },
-  { title: "Choose the products", text: "Pick from our curated range or let us suggest what suits them." },
-  { title: "Add a personal note", text: "A handwritten or printed message, in your words." },
-  { title: "Choose the packaging", text: "Colours, ribbons and finishes to match the moment." },
-  { title: "Add your branding", text: "Optional logo and message for corporate gifting." },
+  { title: "Share your brief", text: "Occasion, audience, quantity and the feeling you want to create." },
+  { title: "Set a budget per gift", text: "From ₹449 giveaways to ₹7,999+ executive hampers." },
+  { title: "Choose the products", text: "Pick from our curated range or let us recommend what suits your people." },
+  { title: "Add your branding", text: "Logo, brand colours and a message in your own words." },
+  { title: "Approve a mock-up", text: "See the box, sleeve and card before anything goes into production." },
+  { title: "We pack and deliver", text: "To one address or many, with tracking shared on WhatsApp." },
 ];
 
 export const aboutValues = [
   { title: "Thoughtfulness first", text: "We start with the person receiving the gift, never the product catalogue." },
-  { title: "Personal, not generic", text: "Names, notes and little details turn a gift into a memory." },
-  { title: "Beautifully presented", text: "Packaging is part of the gift. We treat it that way." },
+  { title: "Brand-true", text: "Your logo, colours and tone, carried through the box, the card and the note." },
+  { title: "Reliable at scale", text: "The 200th hamper is packed with the same care as the first, and arrives on time." },
   { title: "Human, always", text: "You'll chat with a real person who cares whether it arrives perfectly." },
 ];

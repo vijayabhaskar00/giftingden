@@ -11,8 +11,8 @@ import { priceBands, recipients, styles } from "@/lib/data/taxonomy";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Shop Gifts | Curated Gift Boxes & Hampers",
-  description: "Browse every Gifthut gift. Filter by occasion, recipient, price and style, then enquire on WhatsApp.",
+  title: "Corporate Hampers | Branded Gift Boxes for Teams & Clients",
+  description: "Browse Gifthut corporate hampers. Filter by occasion, audience, budget per gift and style, then request a quote with your branding on WhatsApp.",
   path: "/gifts",
 });
 
@@ -22,12 +22,12 @@ export default function GiftsPage() {
   const products = getAllProducts().map(slimForGrid);
   return (
     <div className="container-page pb-20 pt-6 md:pb-28">
-      <Breadcrumbs items={[{ name: "Shop Gifts", path: "/gifts" }]} />
-      <SectionHeader as="h1" className="mt-6 md:mt-8" eyebrow="Shop gifts" title="Find a gift they'll remember." subtitle="Search, filter and browse. When something feels right, enquire on WhatsApp and we'll take care of the rest." />
+      <Breadcrumbs items={[{ name: "Corporate Hampers", path: "/gifts" }]} />
+      <SectionHeader as="h1" className="mt-6 md:mt-8" eyebrow="Corporate hampers" title="Find the right hamper for your people." subtitle="Search and filter by occasion, audience and budget per gift. When something fits, ask for a quote on WhatsApp with your quantity and branding." />
 
       <nav aria-label="Browse collections" className="no-scrollbar mt-8 flex gap-2 overflow-x-auto pb-1">
         {priceBands.map((b) => <Link key={b.slug} href={`/gifts?price=${b.slug}`} className={`${chip} shrink-0`}>{b.name}</Link>)}
-        {recipients.slice(0, 7).map((r) => <Link key={r.slug} href={`/gifts?recipient=${r.slug}`} className={`${chip} shrink-0`}>{r.name}</Link>)}
+        {recipients.map((r) => <Link key={r.slug} href={`/gifts?recipient=${r.slug}`} className={`${chip} shrink-0`}>{r.name}</Link>)}
         {styles.map((s) => <Link key={s.slug} href={`/gifts?style=${s.slug}`} className={`${chip} shrink-0`}>{s.name}</Link>)}
       </nav>
 

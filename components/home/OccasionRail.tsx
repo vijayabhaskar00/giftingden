@@ -11,9 +11,9 @@ export default function OccasionRail() {
       <div className="container-page">
         <Reveal>
           <SectionHeader
-            eyebrow="Shop by occasion"
-            title={<span id="occasions-title">Find something they&apos;ll remember.</span>}
-            subtitle="Start with the moment. We'll help with the rest."
+            eyebrow="Gifting solutions"
+            title={<span id="occasions-title">Gifting for every business moment.</span>}
+            subtitle="Start with the occasion. We'll recommend the hamper, the budget and the branding."
             action={<LinkButton href="/occasions" variant="link" size="sm">All occasions</LinkButton>}
           />
         </Reveal>

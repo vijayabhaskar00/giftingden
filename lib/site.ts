@@ -6,9 +6,9 @@ const stripNonDigits = (v: string) => v.replace(/\D/g, "");
 
 export const site = {
   name: "Gifthut",
-  tagline: "Thoughtful Gifts. Beautifully Delivered.",
+  tagline: "Corporate Gifting, Beautifully Delivered.",
   description:
-    "Gifthut curates thoughtful gift boxes and hampers for birthdays, anniversaries, weddings, festivals and corporate gifting across India. Discover something special and enquire on WhatsApp.",
+    "Gifthut designs premium corporate gifts and branded hampers for employee onboarding, client gifting, Diwali and festive gifting, events and bulk orders across India. Get a quote on WhatsApp.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.gifthut.com").replace(/\/$/, ""),
   /** Digits only, international format. Replace via NEXT_PUBLIC_WHATSAPP_NUMBER. */
   whatsappNumber: stripNonDigits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919030515380"),
@@ -21,7 +21,7 @@ export const site = {
   /** Edit freely: surfaced on contact page, FAQ and product pages. */
   supportHours: "Monday to Saturday, 10:00 am – 7:00 pm IST",
   deliveryPromise:
-    "Delivered across India, usually within 3–5 working days. Need it sooner? Ask us on WhatsApp for express options.",
+    "Delivered across India to one address or many. Ready hampers usually ship in 3–5 working days; branded and bulk orders in 7–10.",
 } as const;
 
 export function absoluteUrl(path = "/"): string {

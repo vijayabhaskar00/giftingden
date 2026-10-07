@@ -82,18 +82,22 @@ export function sortProducts(list: Product[], sort: SortKey): Product[] {
 
 /** Natural-language synonyms mapped to taxonomy slugs. */
 const SYNONYMS: Record<string, { recipient?: string; occasion?: string; style?: string; category?: string }> = {
-  mom: { recipient: "parents" }, mother: { recipient: "parents" }, mum: { recipient: "parents" },
-  dad: { recipient: "parents" }, father: { recipient: "parents" }, parents: { recipient: "parents" },
-  girlfriend: { recipient: "her" }, wife: { recipient: "her" }, sister: { recipient: "her" }, her: { recipient: "her" },
-  boyfriend: { recipient: "him" }, husband: { recipient: "him" }, brother: { recipient: "him" }, him: { recipient: "him" },
-  couple: { recipient: "couples" }, couples: { recipient: "couples" },
-  friend: { recipient: "friends" }, friends: { recipient: "friends" },
-  boss: { recipient: "colleagues" }, colleague: { recipient: "colleagues" }, colleagues: { recipient: "colleagues" },
-  client: { recipient: "clients" }, clients: { recipient: "clients" }, employee: { recipient: "employees" },
-  bday: { occasion: "birthday" }, valentine: { occasion: "valentines" }, diwali: { occasion: "festive" },
-  shaadi: { occasion: "wedding" }, bridal: { occasion: "wedding" }, housewarming: { occasion: "new-beginnings" },
-  selfcare: { style: "self-care" }, "self-care": { style: "self-care" }, spa: { style: "self-care" },
-  chocolate: { style: "food-treats" }, chocolates: { style: "food-treats" }, food: { style: "food-treats" },
+  client: { recipient: "clients" }, clients: { recipient: "clients" }, customer: { recipient: "clients" }, customers: { recipient: "clients" },
+  employee: { recipient: "employees" }, employees: { recipient: "employees" }, staff: { recipient: "employees" }, hr: { recipient: "employees" },
+  team: { recipient: "teams" }, teams: { recipient: "teams" },
+  vip: { recipient: "leadership" }, ceo: { recipient: "leadership" }, boss: { recipient: "leadership" }, leadership: { recipient: "leadership" }, executive: { recipient: "leadership" },
+  vendor: { recipient: "partners" }, vendors: { recipient: "partners" }, partner: { recipient: "partners" }, partners: { recipient: "partners" },
+  delegate: { recipient: "delegates" }, delegates: { recipient: "delegates" }, attendee: { recipient: "delegates" }, speaker: { recipient: "delegates" },
+  joiner: { occasion: "onboarding" }, joiners: { occasion: "onboarding" }, onboarding: { occasion: "onboarding" }, welcome: { occasion: "onboarding" },
+  diwali: { occasion: "festive" }, festival: { occasion: "festive" }, festive: { occasion: "festive" },
+  newyear: { occasion: "new-year" }, "year-end": { occasion: "new-year" }, yearend: { occasion: "new-year" },
+  anniversary: { occasion: "milestones" }, promotion: { occasion: "milestones" }, milestone: { occasion: "milestones" },
+  conference: { occasion: "events" }, event: { occasion: "events" }, offsite: { occasion: "events" }, launch: { occasion: "events" },
+  branded: { style: "branded" }, branding: { style: "branded" }, logo: { style: "branded" },
+  wellness: { style: "wellness" }, selfcare: { style: "wellness" }, "self-care": { style: "wellness" },
+  luxury: { style: "premium" }, premium: { style: "premium" },
+  chocolate: { style: "food-treats" }, chocolates: { style: "food-treats" }, food: { style: "food-treats" }, sweets: { style: "food-treats" },
+  tech: { style: "tech" }, desk: { style: "tech" },
 };
 
 /** Extracts a budget ceiling from queries like "₹2000", "under 1,500", "2k". */

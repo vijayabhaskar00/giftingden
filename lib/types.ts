@@ -31,24 +31,18 @@ export interface Taxon {
 }
 
 export type CategorySlug =
-  | "birthday-boxes" | "self-care-boxes" | "couple-hampers" | "corporate-hampers"
-  | "luxury-hampers" | "festive-hampers" | "bridesmaid-gifts" | "wedding-hampers"
-  | "new-employee-kits" | "thank-you-boxes" | "custom-hampers";
+  | "corporate-hampers" | "new-employee-kits" | "festive-hampers" | "luxury-hampers"
+  | "thank-you-boxes" | "birthday-boxes" | "self-care-boxes" | "custom-hampers";
 
 export type OccasionSlug =
-  | "birthday" | "anniversary" | "wedding" | "congratulations" | "valentines"
-  | "festive" | "corporate" | "thank-you" | "new-beginnings" | "just-because";
+  | "onboarding" | "appreciation" | "client-gifting" | "festive" | "new-year"
+  | "milestones" | "events" | "thank-you";
 
-export type RecipientSlug =
-  | "her" | "him" | "parents" | "couples" | "friends" | "colleagues" | "clients" | "employees";
+export type RecipientSlug = "clients" | "employees" | "teams" | "leadership" | "partners" | "delegates";
 
-export type StyleSlug =
-  | "luxury" | "minimal" | "cute" | "personalised" | "self-care" | "food-treats" | "wellness" | "experiences";
+export type StyleSlug = "premium" | "minimal" | "festive" | "branded" | "wellness" | "food-treats" | "tech";
 
-export type PersonalitySlug =
-  | "minimalist" | "luxury-lover" | "foodie" | "self-care" | "tech-lover" | "travel-lover" | "sentimental";
-
-export type PriceBandSlug = "under-500" | "500-1000" | "1000-2500" | "2500-5000" | "5000-plus";
+export type PriceBandSlug = "under-1000" | "1000-2000" | "2000-3500" | "3500-6000" | "6000-plus";
 
 export interface Product {
   id: string;
@@ -65,7 +59,6 @@ export interface Product {
   occasion: OccasionSlug[];
   recipient: RecipientSlug[];
   style: StyleSlug[];
-  personality: PersonalitySlug[];
   tags: string[];
   images: ProductImage[];
   gallery: ProductImage[];
@@ -102,7 +95,7 @@ export interface FinderAnswers {
   recipient?: string;
   occasion?: string;
   budget?: string;
-  personality?: string;
+  quantity?: string;
 }
 
 export interface Recommendation {

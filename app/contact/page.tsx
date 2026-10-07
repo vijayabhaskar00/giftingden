@@ -9,8 +9,8 @@ import { site } from "@/lib/site";
 import { createGeneralWhatsAppMessage } from "@/lib/whatsapp";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Gifthut | Chat with a Gifting Expert",
-  description: "Reach Gifthut on WhatsApp, email or Instagram. Our gifting team will help you choose, customise and deliver the perfect gift.",
+  title: "Contact Gifthut | Corporate Gifting Enquiries",
+  description: "Reach Gifthut on WhatsApp, email or Instagram. Our corporate gifting team will help you choose, brand and deliver your hampers.",
   path: "/contact",
 });
 
@@ -21,8 +21,8 @@ export default function ContactPage() {
       <div className="mt-8 grid gap-14 md:mt-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <p className="t-eyebrow mb-5">Contact</p>
-          <h1 className="t-h1">Let&apos;s talk gifts.</h1>
-          <p className="t-lead mt-6">WhatsApp is the fastest way to reach us. Share the occasion, a budget and a date, and we&apos;ll take it from there.</p>
+          <h1 className="t-h1">Let&apos;s talk corporate gifting.</h1>
+          <p className="t-lead mt-6">WhatsApp is the fastest way to reach us. Share the occasion, quantity, budget per gift and delivery date, and we&apos;ll take it from there.</p>
           <div className="mt-8"><WhatsAppButton message={createGeneralWhatsAppMessage()} label="Chat on WhatsApp" size="lg" source="contact_page" /></div>
           <ul className="mt-12 space-y-5 text-[0.95rem]">
             <li className="flex items-center gap-3"><Mail aria-hidden className="h-5 w-5 text-accent-ink" /><a className="underline underline-offset-4" href={`mailto:${site.email}`}>{site.email}</a></li>

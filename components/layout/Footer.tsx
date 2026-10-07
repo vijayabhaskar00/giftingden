@@ -6,8 +6,8 @@ import { site } from "@/lib/site";
 import { createGeneralWhatsAppMessage, createWhatsAppUrl } from "@/lib/whatsapp";
 
 const cols = [
-  { title: "Shop", links: [["Shop Gifts", "/gifts"], ["Gift Packages", "/gift-packages"], ["Occasions", "/occasions"], ["Gift Finder", "/gift-finder"], ["Custom Gifts", "/custom-gifts"]] },
-  { title: "Company", links: [["Corporate Gifting", "/corporate-gifting"], ["About", "/about"], ["Contact", "/contact"], ["FAQ", "/faq"]] },
+  { title: "Gifting", links: [["Corporate Hampers", "/gifts"], ["Collections", "/gift-packages"], ["Occasions", "/occasions"], ["Gift Finder", "/gift-finder"], ["Custom Branding", "/custom-gifts"]] },
+  { title: "Company", links: [["Corporate Solutions", "/corporate-gifting"], ["About", "/about"], ["Contact", "/contact"], ["FAQ", "/faq"]] },
   { title: "Legal", links: [["Privacy Policy", "/privacy"], ["Terms", "/terms"], ["Shipping Policy", "/terms#shipping"], ["Cancellation Policy", "/terms#cancellation"]] },
 ] as const;
 
@@ -47,7 +47,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col gap-3 border-t border-background/15 pt-6 text-xs text-background/60 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Made with care in India. Gifts are enquired and confirmed on WhatsApp.</p>
+          <p>Corporate gifting across India. Quotes and orders are confirmed on WhatsApp.</p>
         </div>
       </div>
     </footer>

@@ -26,12 +26,12 @@ export default function ProductDetails({ product: p }: { product: Product }) {
           {p.price != null ? formatINR(p.price) : p.startingPrice != null ? formatINR(p.startingPrice) : "Price on request"}
           {p.price == null && p.startingPrice != null && <span className="ml-2 font-sans text-sm font-semibold uppercase tracking-[0.12em] text-muted">onwards</span>}
         </p>
-        <p className="t-caption">Final price confirmed on WhatsApp, based on your choices.</p>
+        <p className="t-caption">Per-hamper price. Bulk pricing and final quote confirmed on WhatsApp.</p>
       </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
         <WhatsAppButton message={createProductWhatsAppMessage(p)} label="Enquire on WhatsApp" size="lg" className="w-full sm:flex-1 lg:flex-none" source="product_page" {...tracking} />
-        <WhatsAppButton message={createProductWhatsAppMessage(p, { customisation: true })} label={p.customisable ? "Ask About Customisation" : "Ask a Question"} variant="outline" size="lg" icon={false} className="w-full sm:flex-1 lg:flex-none" source="product_page_custom" {...tracking} />
+        <WhatsAppButton message={createProductWhatsAppMessage(p, { customisation: true })} label={p.customisable ? "Ask About Branding" : "Ask a Question"} variant="outline" size="lg" icon={false} className="w-full sm:flex-1 lg:flex-none" source="product_page_custom" {...tracking} />
       </div>
 
       <section aria-labelledby="inside" className="mt-12">
@@ -57,10 +57,10 @@ export default function ProductDetails({ product: p }: { product: Product }) {
       </section>
 
       <section aria-labelledby="custom" className="mt-10">
-        <H><span id="custom">Customisation</span></H>
+        <H><span id="custom">Branding &amp; customisation</span></H>
         {p.customisable ? (
           <ul className="space-y-2.5">{p.customisationOptions.map((o) => <li key={o} className="flex items-start gap-3"><Check aria-hidden className="mt-1 h-4 w-4 shrink-0 text-accent-ink" />{o}</li>)}</ul>
-        ) : <p className="text-muted">This gift is ready to send as-is. Want changes? Ask us on WhatsApp.</p>}
+        ) : <p className="text-muted">This hamper ships as-is. Want changes? Ask us on WhatsApp.</p>}
       </section>
 
       <section aria-labelledby="delivery" className="mt-10 rounded-md bg-beige/70 p-5">

@@ -21,7 +21,7 @@ export default function GiftRecommendation({ rec }: { rec: Recommendation }) {
       <div className="mt-auto flex flex-col gap-2 pt-5 sm:flex-row md:flex-col xl:flex-row">
         <Link href={`/gift/${p.slug}`} className={buttonClasses("outline", "sm", "w-full sm:flex-1 md:flex-none xl:flex-1")}>View Gift</Link>
         <WhatsAppButton
-          message={createProductWhatsAppMessage(p)} label="Enquire" size="sm" className="w-full sm:flex-1 md:flex-none xl:flex-1"
+          message={createProductWhatsAppMessage(p)} label="Get a quote" size="sm" className="w-full sm:flex-1 md:flex-none xl:flex-1"
           ariaLabel={`Enquire about ${p.name} on WhatsApp (opens in a new tab)`}
           source="gift_finder" productId={p.sku} productName={p.name} category={p.category} occasion={p.occasion[0]}
         />

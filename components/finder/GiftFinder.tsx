@@ -75,7 +75,7 @@ export default function GiftFinder({ headingId = "finder-title", recommender = r
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="t-eyebrow mb-3">Your shortlist</p>
-              <h3 id={headingId} className="t-h2">Something they&apos;ll remember.</h3>
+              <h3 id={headingId} className="t-h2">Your hamper shortlist.</h3>
             </div>
             <button type="button" onClick={reset} className="flex items-center gap-2 self-start text-sm font-semibold text-muted underline-offset-4 hover:text-foreground hover:underline md:self-auto">
               <RotateCcw aria-hidden className="h-4 w-4" /> Start over
@@ -90,8 +90,8 @@ export default function GiftFinder({ headingId = "finder-title", recommender = r
             {results.map((r) => <li key={r.product.id}><GiftRecommendation rec={r} /></li>)}
           </ul>
           <div className="mt-10 flex flex-col items-center gap-3 border-t border-border pt-8 text-center">
-            <p className="t-caption text-base">Not quite right? Our gifting team can suggest more, within your budget.</p>
-            <WhatsAppButton message={createGiftFinderWhatsAppMessage(answers, results.map((r) => r.product))} label="Chat with a Gifting Expert" size="lg" source="gift_finder_results" />
+            <p className="t-caption text-base">Not quite right? Our corporate team can suggest more, within your budget and quantity.</p>
+            <WhatsAppButton message={createGiftFinderWhatsAppMessage(answers, results.map((r) => r.product))} label="Talk to Our Corporate Team" size="lg" source="gift_finder_results" />
           </div>
         </div>
       )}

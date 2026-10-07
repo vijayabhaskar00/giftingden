@@ -43,7 +43,7 @@ export default function Newsletter({ tone = "dark" }: { tone?: "dark" | "light" 
   const dark = tone === "dark";
   return (
     <form onSubmit={onSubmit} noValidate aria-label="Newsletter" className="w-full max-w-md">
-      <label htmlFor="newsletter-email" className={`block text-sm font-semibold ${dark ? "text-background" : ""}`}>Get gifting inspiration in your inbox.</label>
+      <label htmlFor="newsletter-email" className={`block text-sm font-semibold ${dark ? "text-background" : ""}`}>Get corporate gifting ideas in your inbox.</label>
       <div className="mt-3 flex">
         <input
           id="newsletter-email" type="email" inputMode="email" autoComplete="email" required maxLength={254} value={email}

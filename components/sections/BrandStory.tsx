@@ -13,14 +13,14 @@ export default function BrandStory() {
             <GiftArt art={{ tone: "champagne", box: "ivory", items: ["card", "candle", "flowers"], photo: photoUrl("ribbon") }} variant="wrapped" alt="Hands tying a gold satin ribbon on an ivory Gifthut gift box" />
           </div>
           <div className="absolute -bottom-6 right-4 hidden w-40 overflow-hidden rounded-md border-[6px] border-background shadow-xl sm:block md:-right-6 lg:-right-10">
-            <div className="relative aspect-square"><GiftArt art={{ tone: "rose", items: ["card", "flowers"], photo: photoUrl("bridesmaid-close") }} variant="detail" alt="Rose balm, silk scrunchie and a mirror beside pale pink flowers" /></div>
+            <div className="relative aspect-square"><GiftArt art={{ tone: "rose", items: ["card", "flowers"], photo: photoUrl("corporate-flat") }} variant="detail" alt="An executive hamper with leather notebook, sipper and gourmet treats" /></div>
           </div>
         </Reveal>
         <Reveal delay={120} className="lg:col-span-7">
           <p className="t-eyebrow mb-5">Our story</p>
-          <h2 id="story-title" className="t-h1">Gifting Is More Than Giving.</h2>
+          <h2 id="story-title" className="t-h1">Gifting Is Part of Your Brand.</h2>
           <p className="t-lead mt-6 max-w-xl">
-            Gifthut began with a simple belief: the best gifts aren&apos;t just opened. They&apos;re felt. We curate every box around the person receiving it, with the right details, a handwritten note and packaging worth keeping, so a gift says exactly what you meant.
+            Gifthut designs corporate gifts around the people receiving them, and the brand sending them. The right products, a handwritten note and packaging worth keeping, so every box says exactly what your company means, whether you send ten or a thousand.
           </p>
           <dl className="mt-10 grid gap-x-10 gap-y-6 sm:grid-cols-2">
             {aboutValues.map((v) => (

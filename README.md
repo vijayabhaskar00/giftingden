@@ -1,6 +1,6 @@
 # Gifthut
 
-Premium gifting catalogue where every purchase action leads to WhatsApp. No cart, checkout, payments or logins.
+Premium corporate gifting site: branded hampers, bulk orders and custom branding. Every enquiry leads to WhatsApp. No cart, checkout, payments or logins.
 
 Next.js (App Router) · TypeScript · Tailwind CSS v4 · Framer Motion · Lucide.
 

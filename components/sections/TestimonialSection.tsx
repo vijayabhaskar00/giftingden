@@ -26,7 +26,7 @@ export default function TestimonialSection() {
   return (
     <section aria-labelledby="reviews-title" className="section-y bg-beige/60">
       <div className="container-page">
-        <Reveal><SectionHeader eyebrow="Kind words" title={<span id="reviews-title">Loved by People Who Gift With Heart.</span>} align="center" /></Reveal>
+        <Reveal><SectionHeader eyebrow="Client feedback" title={<span id="reviews-title">Trusted by Teams Who Gift With Heart.</span>} align="center" /></Reveal>
         <div className="mt-12 grid gap-5 md:mt-16 lg:grid-cols-3">
           <Reveal className="lg:row-span-2"><ReviewCard review={first} featured /></Reveal>
           {rest.slice(0, 4).map((r, i) => <Reveal key={r.id} delay={i * 80}><ReviewCard review={r} /></Reveal>)}

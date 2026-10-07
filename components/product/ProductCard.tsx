@@ -45,7 +45,7 @@ export default function ProductCard({ product, priority, wide, sizes = "(min-wid
         </div>
         <WhatsAppButton
           message={createProductWhatsAppMessage(product)}
-          label="Enquire" variant="link" icon={false} arrow
+          label="Get a quote" variant="link" icon={false} arrow
           ariaLabel={`Enquire about ${product.name} on WhatsApp (opens in a new tab)`}
           className="mt-3 !h-auto self-start !pb-1 text-[0.72rem]"
           source="product_card" productId={product.sku} productName={product.name} category={product.category}

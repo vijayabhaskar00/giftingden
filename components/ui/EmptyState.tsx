@@ -14,7 +14,7 @@ export default function EmptyState({
       <h2 className="t-h3">{title}</h2>
       <p className="t-caption mt-3 text-base">{text}</p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <WhatsAppButton message={message} source="empty_state" label="Talk to a Gifting Expert" />
+        <WhatsAppButton message={message} source="empty_state" label="Talk to Our Corporate Team" />
         {children}
       </div>
     </div>

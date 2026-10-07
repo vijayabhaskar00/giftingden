@@ -5,11 +5,12 @@ import CorporateForm from "@/components/forms/CorporateForm";
 import ProductGrid from "@/components/product/ProductGrid";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { photoUrl } from "@/lib/photos";
+import ProcessSection from "@/components/sections/ProcessSection";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
 import { getByCategory } from "@/lib/catalogue";
-import { corporateProcess, corporateServices, corporateUseCases } from "@/lib/data/content";
+import { corporateServices, corporateUseCases } from "@/lib/data/content";
 import { buildMetadata } from "@/lib/seo";
 import { createCorporateWhatsAppMessage } from "@/lib/whatsapp";
 
@@ -81,16 +82,7 @@ export default function CorporateGiftingPage() {
         </section>
       )}
 
-      <section aria-labelledby="process" className="section-y bg-champagne/40">
-        <div className="container-page">
-          <Reveal><SectionHeader align="center" eyebrow="How it works" title={<span id="process">From brief to doorstep.</span>} /></Reveal>
-          <ol className="mt-14 grid gap-10 md:grid-cols-4">
-            {corporateProcess.map((s) => (
-              <li key={s.step}><span className="font-display text-5xl italic text-accent-ink">{s.step}</span><h3 className="t-h3 mt-3">{s.title}</h3><p className="t-caption mt-2 text-[0.95rem]">{s.text}</p></li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <ProcessSection />
 
       <section id="enquire" aria-labelledby="brief" className="section-y scroll-mt-20">
         <div className="container-page grid gap-12 lg:grid-cols-12">
